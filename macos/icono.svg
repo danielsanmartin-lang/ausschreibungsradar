@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <title>Ausschreibungsradar</title>
+  <!-- La única fuente del icono. `herramientas/construir_app.py` lo rasteriza con
+       `sips` a los tamaños que pide macOS y lo empaqueta con `iconutil`; las dos
+       vienen con el sistema, así que no hace falta instalar nada ni guardar un PNG
+       binario por tamaño en el repositorio.
+
+       El comentario va DENTRO del <svg> y no encima: `sips` no sabe leer un fichero
+       que empiece por un comentario XML y falla con «Error 13: an unknown error
+       occurred», que no ayuda lo más mínimo a averiguar por qué.
+
+       Un radar: barridos concéntricos y un contacto marcado. El azul es el acento de
+       la interfaz y el verde el de «en seguimiento». -->
+  <defs>
+    <linearGradient id="fondo" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1e2b45"/>
+      <stop offset="1" stop-color="#101724"/>
+    </linearGradient>
+  </defs>
+
+  <!-- 180 de radio es el «squircle» que macOS espera en un icono de 1024. -->
+  <rect width="1024" height="1024" rx="180" fill="url(#fondo)"/>
+
+  <g fill="none" stroke="#4f8cff" stroke-linecap="round">
+    <circle cx="512" cy="512" r="318" stroke-width="18" opacity=".28"/>
+    <circle cx="512" cy="512" r="224" stroke-width="18" opacity=".45"/>
+    <circle cx="512" cy="512" r="130" stroke-width="18" opacity=".62"/>
+    <!-- Las cruces del centro, cortadas para no tapar los barridos. -->
+    <path d="M512 148v104M512 772v104M148 512h104M772 512h104" stroke-width="18" opacity=".5"/>
+    <!-- El barrido: la línea que en un radar de verdad está girando. -->
+    <path d="M512 512 L760 316" stroke-width="26"/>
+  </g>
+
+  <!-- El contacto. Relleno y en verde: es lo único que el radar ha encontrado. -->
+  <circle cx="760" cy="316" r="96" fill="none" stroke="#35c46b" stroke-width="14" opacity=".4"/>
+  <circle cx="760" cy="316" r="62" fill="#35c46b"/>
+</svg>

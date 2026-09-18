@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ausschreibungsradar</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <!-- Los iconos, dibujados una sola vez. Se usan con &lt;use href="#ico-bandeja"&gt;, que es un
+       elemento que `app.js` puede crear sin meter nada en `innerHTML` que venga de un
+       pliego. Sin build step no hay otra manera de no repetir el path en cada una de
+       las cien tarjetas de la lista. Heredan el color con `currentColor`, así que los
+       dos temas y los estados salen gratis. -->
+  <svg width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute">
+    <defs>
+      <symbol id="ico-bandeja" viewBox="0 0 24 24">
+        <path d="M3 13h5l1.5 2.5h5L16 13h5"/>
+        <path d="M4.5 13 6 5.5A1.5 1.5 0 0 1 7.5 4.3h9A1.5 1.5 0 0 1 18 5.5L19.5 13v4.5a1.5 1.5 0 0 1-1.5 1.5H6a1.5 1.5 0 0 1-1.5-1.5z"/>
+      </symbol>
+      <symbol id="ico-calendario" viewBox="0 0 24 24">
+        <rect x="3.5" y="5.5" width="17" height="14" rx="1.8"/>
+        <path d="M8 3.5v4M16 3.5v4M3.5 10.5h17"/>
+      </symbol>
+      <symbol id="ico-trofeo" viewBox="0 0 24 24">
+        <path d="M7.5 4h9v4.5a4.5 4.5 0 0 1-9 0z"/>
+        <path d="M7.5 5.8H4.8v1a3 3 0 0 0 2.9 3M16.5 5.8h2.7v1a3 3 0 0 1-2.9 3"/>
+        <path d="M12 13v4.5M9 20.2h6"/>
+      </symbol>
+      <symbol id="ico-grafico" viewBox="0 0 24 24">
+        <path d="M4 4v16h16"/>
+        <path d="M8 16.5v-4M12.5 16.5v-8M17 16.5v-5.5"/>
+      </symbol>
+      <symbol id="ico-ajustes" viewBox="0 0 24 24">
+        <path d="M4 8h5M13 8h7M4 16h9M17 16h3"/>
+        <circle cx="11" cy="8" r="2.2"/>
+        <circle cx="15" cy="16" r="2.2"/>
+      </symbol>
+      <symbol id="ico-campana" viewBox="0 0 24 24">
+        <path d="M6.5 9.5a5.5 5.5 0 0 1 11 0c0 4.5 1.8 5.8 1.8 5.8H4.7s1.8-1.3 1.8-5.8z"/>
+        <path d="M10 18.8a2 2 0 0 0 4 0"/>
+      </symbol>
+      <symbol id="ico-organo" viewBox="0 0 24 24">
+        <path d="M5.5 20.5V4.8a.8.8 0 0 1 .8-.8h7.4a.8.8 0 0 1 .8.8v15.7"/>
+        <path d="M14.5 9.5h3.2a.8.8 0 0 1 .8.8v10.2M3.5 20.5h17"/>
+        <path d="M8.8 8h2M8.8 11.5h2M8.8 15h2"/>
+      </symbol>
+      <symbol id="ico-reloj" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="8.5"/>
+        <path d="M12 7.2V12l3.2 2"/>
+      </symbol>
+      <symbol id="ico-destello" viewBox="0 0 24 24">
+        <path d="M12 3.4l1.9 5.4 5.4 1.9-5.4 1.9L12 18l-1.9-5.4L4.7 10.7l5.4-1.9z"/>
+      </symbol>
+      <symbol id="ico-buscar" viewBox="0 0 24 24">
+        <circle cx="11" cy="11" r="7.5"/>
+        <path d="M20.5 20.5l-4.2-4.2"/>
+      </symbol>
+      <symbol id="ico-ojo" viewBox="0 0 24 24">
+        <path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12S18 18.5 12 18.5 2.5 12 2.5 12z"/>
+        <circle cx="12" cy="12" r="2.8"/>
+      </symbol>
+      <symbol id="ico-visto" viewBox="0 0 24 24"><path d="M4.5 12.5l5 5 10-11"/></symbol>
+      <symbol id="ico-cruz" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+      <symbol id="ico-punto" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/></symbol>
+    </defs>
+  </svg>
+  <header class="cabecera">
+    <div class="titulo">
+      <h1>Ausschreibungsradar</h1>
+      <p class="sub">Security-Awareness und E-Mail-Sicherheit · Ausschreibungen von Bund, Ländern und Kommunen</p>
+      <div class="busqueda-ahora">
+        <button id="buscar-ahora" class="boton-pri"><svg class="ico" aria-hidden="true"><use href="#ico-buscar"/></svg>Jetzt suchen</button>
+        <span id="ultima-busqueda" class="pista"></span>
+      </div>
+    </div>
+    <div class="kpis" id="kpis"></div>
+  </header>
+
+  <!-- Carga en segundo plano. Se rellena desde /api/busqueda-estado: la ingesta corre
+       en otro proceso y la base va creciendo mientras se trabaja aquí. -->
+  <div id="carga" class="carga" hidden>
+    <div class="carga-texto">
+      <strong id="carga-titulo"></strong>
+      <!-- El botón de parar. No es un adorno: desde que la aplicación se pone al día
+           sola al abrirse, puede empezar a bajar cerca de un giga sin que nadie lo haya
+           pedido en ese momento. Poder decir que no es parte del trato. -->
+      <button id="carga-parar" class="boton-sec" type="button">Abbrechen</button>
+      <span id="carga-detalle" class="pista"></span>
+      <!-- El latido: lo único que se mueve solo. Es la respuesta a «¿sigue viva?». -->
+      <span id="carga-latido" class="pista"></span>
+    </div>
+    <div class="carga-barras">
+      <label>
+        <span id="carga-etapa-txt"></span>
+        <progress id="carga-etapa" max="100" value="0"></progress>
+      </label>
+      <label>
+        <span id="carga-tarea-txt"></span>
+        <progress id="carga-tarea" max="100"></progress>
+      </label>
+    </div>
+  </div>
+
+  <div id="avisos" class="avisos" hidden></div>
+
+  <!-- Aviso de versión nueva. Va en su propio hueco y no en #avisos porque ese lo
+       reescribe entero cada refresco de los contadores, y se lo llevaría por delante. -->
+  <div id="aviso-version" class="avisos" hidden></div>
+
+  <!-- Qué cubre y qué no. Plegado de fábrica: es contexto permanente, no una alarma, y
+       un cartel fijo con seis puntos se deja de leer a la semana. Va fuera de #avisos
+       porque ese se reescribe entero cada refresco. El <details> abre y cierra solo, sin
+       JavaScript; lo único que pone el JS son las cifras y recordar si lo dejaste abierto. -->
+  <details id="cobertura" class="cobertura">
+    <summary id="cobertura-resumen">Was dieser Radar abdeckt – und was nicht</summary>
+    <ul id="cobertura-lista"></ul>
+
+    <!-- Ampliar el archivo. Vive aquí y no en los ajustes porque la pregunta («¿desde
+         cuándo tengo datos?») se hace justo al leer el punto del archivo de la lista de
+         arriba, y la respuesta y el remedio deben estar en el mismo sitio. Nada de esto
+         se descarga solo: el botón es el único camino, y dice lo que cuesta antes de
+         pulsarlo. -->
+    <div id="historico" class="historico" hidden>
+      <p id="historico-texto"></p>
+      <div class="historico-accion">
+        <button id="historico-ampliar" type="button" class="boton-sec"></button>
+        <span id="historico-estado"></span>
+      </div>
+    </div>
+  </details>
+
+  <nav class="vistas" role="tablist" aria-label="Ansichten">
+    <button class="tab activo" role="tab" aria-selected="true" aria-controls="vista-bandeja"
+            data-vista="bandeja"><svg class="ico" aria-hidden="true"><use href="#ico-bandeja"/></svg>Posteingang</button>
+    <button class="tab" role="tab" aria-selected="false" aria-controls="vista-vencimientos"
+            data-vista="vencimientos"><svg class="ico" aria-hidden="true"><use href="#ico-calendario"/></svg>Vertragsenden</button>
+    <button class="tab" role="tab" aria-selected="false" aria-controls="vista-adjudicatarios"
+            data-vista="adjudicatarios"><svg class="ico" aria-hidden="true"><use href="#ico-trofeo"/></svg>Auftragnehmer</button>
+    <button class="tab" role="tab" aria-selected="false" aria-controls="vista-analitica"
+            data-vista="analitica"><svg class="ico" aria-hidden="true"><use href="#ico-grafico"/></svg>Auswertung</button>
+    <button class="tab" role="tab" aria-selected="false" aria-controls="vista-ajustes"
+            data-vista="ajustes"><svg class="ico" aria-hidden="true"><use href="#ico-ajustes"/></svg>Suchbegriffe</button>
+    <button class="tab novedades" id="tab-novedades" hidden></button>
+  </nav>
+
+  <section class="filtros" id="filtros">
+    <input type="search" id="q" placeholder="In Gegenstand, Vergabestelle, Vergabenummer suchen …" autocomplete="off">
+    <select id="perfil"><option value="">Alle Suchprofile</option></select>
+    <select id="estado">
+      <option value="" data-chip="alles außer Verworfenem">Alles außer Verworfenem</option>
+      <option value="nuevo" data-chip="nur ungeprüfte">Ungeprüft</option>
+      <option value="siguiendo" data-chip="nur beobachtete">Beobachtet</option>
+      <option value="presentada" data-chip="nur abgegebene">Abgegeben</option>
+      <option value="descartado" data-chip="nur verworfene">Verworfen</option>
+    </select>
+    <select id="bundesland"><option value="">Ganz Deutschland</option></select>
+    <select id="importe_min">
+      <option value="">Beliebiger Wert</option>
+      <option value="25000">ab 25.000 €</option>
+      <option value="50000">ab 50.000 €</option>
+      <option value="100000">ab 100.000 €</option>
+      <option value="300000">ab 300.000 €</option>
+    </select>
+    <select id="orden">
+      <option value="reciente">Neueste zuerst</option>
+      <option value="urgencia">Frist läuft zuerst ab</option>
+      <option value="puntuacion">Beste Passung</option>
+      <option value="antigua">Älteste zuerst</option>
+      <option value="importe">Höchster Auftragswert</option>
+    </select>
+    <label class="check"><input type="checkbox" id="vivas" checked> Nur laufende</label>
+    <a id="exportar" class="boton-sec" href="/api/export.csv">CSV exportieren</a>
+  </section>
+
+  <main>
+    <section id="vista-bandeja" role="tabpanel">
+      <p id="contador" class="contador"></p>
+      <p id="filtros-activos" class="filtros-activos" hidden></p>
+      <div id="lista" class="lista"></div>
+      <p id="vacio" class="vacio" hidden></p>
+      <button id="mas" class="boton-sec mas" hidden>Mehr laden</button>
+    </section>
+
+    <section id="vista-vencimientos" role="tabpanel" hidden>
+      <p class="contador">
+        Laufende Verträge, die bald enden. Die Liste für den Anruf,
+        <strong>bevor</strong> die neue Ausschreibung herausgeht. Das Enddatum ist
+        errechnet, nicht veröffentlicht.
+      </p>
+      <div class="ventanas" id="ventanas"></div>
+      <p class="total-ventana" id="total-ventana"></p>
+      <div id="lista-vencimientos" class="lista"></div>
+    </section>
+
+    <section id="vista-adjudicatarios" role="tabpanel" hidden>
+      <p class="contador">
+        Wer diese Aufträge bekommt. Schreibvarianten derselben Firma werden
+        zusammengefasst (GmbH, GmbH &amp; Co. KG, ARGE).
+      </p>
+      <div id="lista-adjudicatarios" class="lista"></div>
+    </section>
+
+    <section id="vista-analitica" role="tabpanel" hidden>
+      <p class="contador">
+        Die Muster dieses Marktes, nicht der Stand von heute: wann veröffentlicht wird,
+        zu welchen Preisen zugeschlagen wird und wie lange Entscheidungen dauern. Aus
+        dem heruntergeladenen Archiv.
+      </p>
+      <div class="ventanas" id="analitica-rango"></div>
+      <p class="filtros-activos" id="analitica-filtro">
+        <select id="analitica-perfil"><option value="">Alle Suchprofile</option></select>
+      </p>
+      <p class="total-ventana" id="analitica-resumen"></p>
+      <div id="analitica" class="analitica"></div>
+    </section>
+
+    <section id="vista-ajustes" role="tabpanel" hidden>
+      <p class="contador">
+        Das sind die Wörter, die deine Suche definieren. Beim Speichern wird alles
+        bereits Heruntergeladene neu bewertet, ohne erneut zu laden.
+      </p>
+      <div class="consejos" id="consejos"></div>
+      <div id="lista-perfiles"></div>
+      <div class="acciones-ajustes">
+        <button id="previsualizar" class="boton-sec">Vorschau</button>
+        <button id="guardar-perfiles" class="boton-pri">Speichern &amp; anwenden</button>
+        <span id="ajustes-aviso" class="pista"></span>
+      </div>
+      <div id="previsualizacion" class="previsualizacion" hidden></div>
+    </section>
+  </main>
+
+  <!-- El fondo del panel. Va antes del panel para que quede por debajo sin tener que
+       pelearse con el z-index, y da el sitio donde pulsar para cerrar que faltaba. -->
+  <div id="panel-fondo" class="panel-fondo" hidden></div>
+
+  <aside id="panel" class="panel" role="dialog" aria-modal="true"
+         aria-label="Bekanntmachung im Detail" hidden>
+    <button class="cerrar" id="cerrar" aria-label="Schließen">×</button>
+    <div id="panel-contenido"></div>
+  </aside>
+
+  <footer class="pie">
+    <span id="salud"></span>
+  </footer>
+
+  <script src="/app.js"></script>
+</body>
+</html>

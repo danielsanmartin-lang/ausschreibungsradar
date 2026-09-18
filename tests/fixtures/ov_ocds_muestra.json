@@ -1,0 +1,2754 @@
+{
+ "_nota": "Muestra REAL del Bekanntmachungsservice (datos CC0). Un release por caso que el conector tiene que saber leer; la etiqueta dice cuál.",
+ "casos": [
+  {
+   "caso": "tender completo (CPV + documentos + lotes + importe)",
+   "payload": {
+    "uri": "https://oeffentlichevergabe.de/api/notices/000ada85-c11f-44cf-b1e6-b4bb5232ed7b?format=ocds&noticeVersion=01",
+    "version": "1.1",
+    "extensions": [
+     "https://raw.githubusercontent.com/open-contracting-extensions/ocds_lots_extension/bd6a5a0617abcdcf9da19db0e70a899e6b10c91c/extension.json",
+     "https://raw.githubusercontent.com/open-contracting-extensions/ocds_location_extension/v1.1.5/extension.json",
+     "https://raw.githubusercontent.com/open-contracting-extensions/ocds_enquiry_extension/v1.1.5/extension.json",
+     "https://raw.githubusercontent.com/open-contracting-extensions/ocds_coveredBy_extension/9b617f9c3a84f8eb727f273e1bb55a1c5bc7a925/extension.json"
+    ],
+    "publishedDate": "2026-08-22T11:58:05Z",
+    "releases": [
+     {
+      "ocid": "ocds-mnwr74-3388307f-365f-4502-a18d-41661ae47e9e",
+      "id": "000ada85-c11f-44cf-b1e6-b4bb5232ed7b",
+      "date": "2026-08-22T11:58:05Z",
+      "tag": [
+       "tender"
+      ],
+      "initiationType": "tender",
+      "parties": [
+       {
+        "name": "Amt Geltinger Bucht",
+        "id": "ORG-0001",
+        "identifier": {
+         "id": "t: +49 46 32 84 91 0",
+         "legalName": "Amt Geltinger Bucht"
+        },
+        "address": {
+         "streetAddress": "Holmlück 2",
+         "locality": "Steinbergkirche",
+         "region": "DEF0C",
+         "postalCode": "24972",
+         "countryName": "DEU"
+        },
+        "contactPoint": {
+         "email": "info@amt-geltingerbucht.de",
+         "telephone": "+49 46 32-84 91-0",
+         "url": "https://www.amt-geltingerbucht.de"
+        },
+        "roles": [
+         "buyer",
+         "processContactPoint",
+         "reviewContactPoint",
+         "evaluationBody",
+         "submissionReceiptBody"
+        ]
+       },
+       {
+        "name": "Vergabekammer Schleswig-Holstein beim Ministerium für Wirtschaft, Verkehr, Arbeit, Technologie und Tourismus des Landes Schleswig-Holstein",
+        "id": "ORG-0002",
+        "identifier": {
+         "id": "t: +49 4319 884542",
+         "legalName": "Vergabekammer Schleswig-Holstein beim Ministerium für Wirtschaft, Verkehr, Arbeit, Technologie und Tourismus des Landes Schleswig-Holstein"
+        },
+        "address": {
+         "locality": "Kiel",
+         "region": "DEF02",
+         "postalCode": "24105",
+         "countryName": "DEU"
+        },
+        "contactPoint": {
+         "email": "vergabekammer@wimi.landsh.de",
+         "telephone": "+49 431 988 4542",
+         "url": "www.vergabekammer.schlewig-holstein.de/"
+        },
+        "roles": [
+         "reviewBody"
+        ]
+       }
+      ],
+      "buyer": {
+       "name": "Amt Geltinger Bucht",
+       "id": "t: +49 46 32 84 91 0",
+       "identifier": {
+        "id": "ORG-0001",
+        "legalName": "Amt Geltinger Bucht"
+       },
+       "address": {
+        "streetAddress": "Holmlück 2",
+        "locality": "Steinbergkirche",
+        "region": "DEF0C",
+        "postalCode": "24972",
+        "countryName": "DEU"
+       },
+       "contactPoint": {
+        "email": "info@amt-geltingerbucht.de",
+        "telephone": "+49 46 32-84 91-0",
+        "url": "https://www.amt-geltingerbucht.de"
+       }
+      },
+      "tender": {
+       "id": "3388307f-365f-4502-a18d-41661ae47e9e",
+       "title": "HLF 20 Fw. Steinbergkirche im Amt Geltinger Bucht",
+       "description": "Beschaffung eines Hilfeleistungslöschgruppenfahrzeugs HLF 20 nach DIN 14530-27 für die Feuerwehr Steinbergkirche im Amt Geltinger Bucht mit Fahrgestell, feuerwehrtechn. Aufbau und Beladung.",
+       "procuringEntity": {
+        "name": "Amt Geltinger Bucht",
+        "id": "t: +49 46 32 84 91 0"
+       },
+       "items": [
+        {
+         "id": "LOT-0001",
+         "classification": {
+          "scheme": "CPV",
+          "id": "34144210",
+          "description": "Firefighting vehicles"
+         },
+         "deliveryAddress": {
+          "streetAddress": "Holmlück 2",
+          "locality": "Steinbergkirche",
+          "region": "DEF0C",
+          "postalCode": "24792",
+          "countryName": "DEU"
+         },
+         "relatedLot": "LOT-0001"
+        },
+        {
+         "id": "LOT-0002",
+         "classification": {
+          "scheme": "CPV",
+          "id": "34144210",
+          "description": "Firefighting vehicles"
+         },
+         "deliveryAddress": {
+          "streetAddress": "Holmlück 2",
+          "locality": "Steinbergkirche",
+          "region": "DEF0C",
+          "postalCode": "24792",
+          "countryName": "DEU"
+         },
+         "relatedLot": "LOT-0002"
+        },
+        {
+         "id": "LOT-0003",
+         "classification": {
+          "scheme": "CPV",
+          "id": "34144210",
+          "description": "Firefighting vehicles"
+         },
+         "deliveryAddress": {
+          "region": "DEF02",
+          "countryName": "DEU"
+         },
+         "relatedLot": "LOT-0003"
+        }
+       ],
+       "value": {
+        "amount": 500000.0,
+        "currency": "EUR"
+       },
+       "procurementMethod": "open",
+       "procurementMethodDetails": "Open",
+       "mainProcurementCategory": "goods",
+       "numberOfTenderers": 0,
+       "documents": [
+        {
+         "id": "DOC-0001",
+         "url": "https://www.subreport.de/E39662358",
+         "language": "DEU",
+         "relatedLots": [
+          "LOT-0001"
+         ]
+        },
+        {
+         "id": "DOC-0002",
+         "url": "https://www.subreport.de/E39662358",
+         "language": "DEU",
+         "relatedLots": [
+          "LOT-0002"
+         ]
+        },
+        {
+         "id": "DOC-0003",
+         "url": "https://www.subreport.de/E39662358",
+         "language": "DEU",
+         "relatedLots": [
+          "LOT-0003"
+         ]
+        }
+       ],
+       "lots": [
+        {
+         "id": "LOT-0001",
+         "title": "Produktion und Lieferung eines Hilfeleistungslöschgruppenfahrzeugs HLF20 nach DIN 14530-27 für die Fw Steinbergkirche",
+         "description": "Feuerwehrtechn. Fahrgestell geeignet zum Aufbau eines HLF 20 gem. Leistungsverzeichnis (LV).",
+         "value": {
+          "amount": 150000.0,
+          "currency": "EUR"
+         },
+         "contractPeriod": {
+          "startDate": "2026-11-02T00:00:00+01:00",
+          "endDate": "2028-03-31T00:00:00+02:00"
+         }
+        },
+        {
+         "id": "LOT-0002",
+         "title": "Produktion und Lieferung eines Hilfeleistungslöschgruppenfahrzeugs HLF20 nach DIN 14530-27 für die Fw Steinbergkirche",
+         "description": "Feuerwehrtechn. Aus- und Aufbau auf das Fahrgestell des Los 1 als Hilfeleistungslöschgruppenfahrzeug HLF 20 gem. Leistungsverzeichnis (LV).",
+         "value": {
+          "amount": 200000.0,
+          "currency": "EUR"
+         },
+         "contractPeriod": {
+          "startDate": "2026-11-02T00:00:00+01:00",
+          "endDate": "2028-03-31T00:00:00+02:00"
+         }
+        },
+        {
+         "id": "LOT-0003",
+         "title": "Produktion und Lieferung eines Hilfeleistungslöschgruppenfahrzeugs HLF20 nach DIN 14530-27 für die Fw Steinbergkirche",
+         "description": "Feuerwehrtechn. Beladung zur Verlastung auf dem in Los 1 (Fahrgestell) und Los 2 (Aufbau) beschriebenen Hilfeleistungslöschgruppenfahrzeugs gem. Leistungsverzeichnis (LV).",
+         "value": {
+          "amount": 150000.0,
+          "currency": "EUR"
+         },
+         "contractPeriod": {
+          "startDate": "2026-03-01T00:00:00+01:00",
+          "endDate": "2028-03-31T00:00:00+02:00"
+         }
+        }
+       ],
+       "lotDetails": {
+        "maximumLotsBidPerSupplier": 3,
+        "maximumLotsAwardedPerSupplier": 3
+       }
+      },
+      "language": "DEU"
+     }
+    ],
+    "publisher": {
+     "name": "Bekanntmachungsservice"
+    },
+    "license": "https://opendefinition.org/licenses/cc-zero/",
+    "publicationPolicy": "https://oeffentlichevergabe.de/ui/de/publicationPolicy"
+   }
+  },
+  {
+   "caso": "tender sin CPV",
+   "payload": {
+    "uri": "https://oeffentlichevergabe.de/api/notices/010f171c-7d99-4e3a-b573-94b6d635a592?format=ocds&noticeVersion=1",
+    "version": "1.1",
+    "extensions": [
+     "https://raw.githubusercontent.com/open-contracting-extensions/ocds_lots_extension/bd6a5a0617abcdcf9da19db0e70a899e6b10c91c/extension.json",
+     "https://raw.githubusercontent.com/open-contracting-extensions/ocds_location_extension/v1.1.5/extension.json",
+     "https://raw.githubusercontent.com/open-contracting-extensions/ocds_enquiry_extension/v1.1.5/extension.json",
+     "https://raw.githubusercontent.com/open-contracting-extensions/ocds_coveredBy_extension/9b617f9c3a84f8eb727f273e1bb55a1c5bc7a925/extension.json"
+    ],
+    "publishedDate": "2026-08-25T07:06:04Z",
+    "releases": [
+     {
+      "ocid": "ocds-mnwr74-24149252-44a4-4c11-93c1-411b80982d33",
+      "id": "010f171c-7d99-4e3a-b573-94b6d635a592",
+      "date": "2026-08-25T07:06:04Z",
+      "tag": [
+       "tender"
+      ],
+      "initiationType": "tender",
+      "parties": [
+       {
+        "name": "Landkreis Harz",
+        "id": "ORG-0001",
+        "identifier": {
+         "legalName": "Landkreis Harz"
+        },
+        "address": {
+         "streetAddress": "Friedrich-Ebert-Str. 42",
+         "locality": "Halberstadt",
+         "postalCode": "38820",
+         "countryName": "DEU"
+        },
+        "contactPoint": {
+         "email": "vergabestelle@kreis-hz.de",
+         "telephone": "+49 3941 59704376",
+         "url": "https://www.kreis-hz.de"
+        },
+        "roles": [
+         "buyer"
+        ]
+       }
+      ],
+      "buyer": {
+       "name": "Landkreis Harz",
+       "identifier": {
+        "id": "ORG-0001",
+        "legalName": "Landkreis Harz"
+       },
+       "address": {
+        "streetAddress": "Friedrich-Ebert-Str. 42",
+        "locality": "Halberstadt",
+        "postalCode": "38820",
+        "countryName": "DEU"
+       },
+       "contactPoint": {
+        "email": "vergabestelle@kreis-hz.de",
+        "telephone": "+49 3941 59704376",
+        "url": "https://www.kreis-hz.de"
+       }
+      },
+      "tender": {
+       "id": "24149252-44a4-4c11-93c1-411b80982d33",
+       "title": "Kauf und Lieferung eines ferngesteuerten Raupen- Schlegelmäher mit Frontmähwerk",
+       "description": "Kauf und Lieferung eines Ferngesteuerter Raupen-Schlegelmäher mit Frontmähwerk",
+       "procuringEntity": {
+        "name": "Landkreis Harz"
+       },
+       "items": [
+        {
+         "id": "LOT-0000",
+         "deliveryLocation": {
+          "description": "Landkreis Harz\nKreisstraßenbauhof\nSternstraße 11\n38820 Halberstadt"
+         },
+         "relatedLot": "LOT-0000"
+        }
+       ],
+       "procurementMethodDetails": "Public announcement",
+       "numberOfTenderers": 0,
+       "documents": [
+        {
+         "id": "DOC-0001",
+         "url": "https://www.evergabe-online.de/tenderdetails.html?id=885416",
+         "relatedLots": [
+          "LOT-0000"
+         ]
+        }
+       ],
+       "lots": [
+        {
+         "id": "LOT-0000",
+         "title": "Kauf und Lieferung eines ferngesteuerten Raupen- Schlegelmäher mit Frontmähwerk",
+         "description": "Kauf und Lieferung eines Ferngesteuerter Raupen-Schlegelmäher mit Frontmähwerk"
+        }
+       ]
+      },
+      "language": "DEU"
+     }
+    ],
+    "publisher": {
+     "name": "Bekanntmachungsservice"
+    },
+    "license": "https://opendefinition.org/licenses/cc-zero/",
+    "publicationPolicy": "https://oeffentlichevergabe.de/ui/de/publicationPolicy"
+   }
+  },
+  {
+   "caso": "tender sin documentos",
+   "payload": {
+    "uri": "https://oeffentlichevergabe.de/api/notices/05cd6718-9c1c-4b66-b15f-01c8c50bbb00?format=ocds&noticeVersion=1",
+    "version": "1.1",
+    "extensions": [
+     "https://raw.githubusercontent.com/open-contracting-extensions/ocds_lots_extension/bd6a5a0617abcdcf9da19db0e70a899e6b10c91c/extension.json",
+     "https://raw.githubusercontent.com/open-contracting-extensions/ocds_location_extension/v1.1.5/extension.json",
+     "https://raw.githubusercontent.com/open-contracting-extensions/ocds_enquiry_extension/v1.1.5/extension.json",
+     "https://raw.githubusercontent.com/open-contracting-extensions/ocds_coveredBy_extension/9b617f9c3a84f8eb727f273e1bb55a1c5bc7a925/extension.json"
+    ],
+    "publishedDate": "2026-08-17T05:36:04Z",
+    "releases": [
+     {
+      "ocid": "ocds-mnwr74-84f018a5-6ee6-4a92-84ea-4fde5fd1862a",
+      "id": "05cd6718-9c1c-4b66-b15f-01c8c50bbb00",
+      "date": "2026-08-17T05:36:04Z",
+      "tag": [
+       "tender"
+      ],
+      "initiationType": "tender",
+      "parties": [
+       {
+        "name": "Bundesamt für Wirtschaft und Ausfuhrkontrolle",
+        "id": "ORG-0001",
+        "identifier": {
+         "legalName": "Bundesamt für Wirtschaft und Ausfuhrkontrolle"
+        },
+        "address": {
+         "streetAddress": "Frankfurter Straße 29-35",
+         "locality": "Eschborn",
+         "postalCode": "65760",
+         "countryName": "DEU"
+        },
+        "contactPoint": {
+         "email": "beschaffung@bafa.bund.de",
+         "telephone": "+49 6196 9082422",
+         "url": "http://www.bafa.de"
+        },
+        "roles": [
+         "buyer"
+        ]
+       }
+      ],
+      "buyer": {
+       "name": "Bundesamt für Wirtschaft und Ausfuhrkontrolle",
+       "identifier": {
+        "id": "ORG-0001",
+        "legalName": "Bundesamt für Wirtschaft und Ausfuhrkontrolle"
+       },
+       "address": {
+        "streetAddress": "Frankfurter Straße 29-35",
+        "locality": "Eschborn",
+        "postalCode": "65760",
+        "countryName": "DEU"
+       },
+       "contactPoint": {
+        "email": "beschaffung@bafa.bund.de",
+        "telephone": "+49 6196 9082422",
+        "url": "http://www.bafa.de"
+       }
+      },
+      "tender": {
+       "id": "84f018a5-6ee6-4a92-84ea-4fde5fd1862a",
+       "title": "Veranstaltung 19.ITE",
+       "description": "Technik und Druck bzw. Kopie von Konferenzunterlagen\nsiehe Leistungsbeschreibung",
+       "procuringEntity": {
+        "name": "Bundesamt für Wirtschaft und Ausfuhrkontrolle"
+       },
+       "items": [
+        {
+         "id": "LOT-0000",
+         "classification": {
+          "scheme": "CPV",
+          "id": "79950000",
+          "description": "Exhibition, fair and congress organisation services"
+         },
+         "deliveryLocation": {
+          "description": "Frankfurt"
+         },
+         "relatedLot": "LOT-0000"
+        }
+       ],
+       "procurementMethodDetails": "Public announcement",
+       "mainProcurementCategory": "services",
+       "numberOfTenderers": 0,
+       "lots": [
+        {
+         "id": "LOT-0000",
+         "title": "Veranstaltung 19.ITE",
+         "description": "Technik und Druck bzw. Kopie von Konferenzunterlagen\nsiehe Leistungsbeschreibung"
+        }
+       ]
+      },
+      "language": "DEU"
+     }
+    ],
+    "publisher": {
+     "name": "Bekanntmachungsservice"
+    },
+    "license": "https://opendefinition.org/licenses/cc-zero/",
+    "publicationPolicy": "https://oeffentlichevergabe.de/ui/de/publicationPolicy"
+   }
+  },
+  {
+   "caso": "tender con varios lotes",
+   "payload": {
+    "uri": "https://oeffentlichevergabe.de/api/notices/005ae5b2-fb8a-4378-8177-2b79c97f8ecb?format=ocds&noticeVersion=01",
+    "version": "1.1",
+    "extensions": [
+     "https://raw.githubusercontent.com/open-contracting-extensions/ocds_lots_extension/bd6a5a0617abcdcf9da19db0e70a899e6b10c91c/extension.json",
+     "https://raw.githubusercontent.com/open-contracting-extensions/ocds_location_extension/v1.1.5/extension.json",
+     "https://raw.githubusercontent.com/open-contracting-extensions/ocds_enquiry_extension/v1.1.5/extension.json",
+     "https://raw.githubusercontent.com/open-contracting-extensions/ocds_coveredBy_extension/9b617f9c3a84f8eb727f273e1bb55a1c5bc7a925/extension.json"
+    ],
+    "publishedDate": "2026-08-20T02:08:34Z",
+    "releases": [
+     {
+      "ocid": "ocds-mnwr74-b1000000-c0de-4000-a000-00d462593815",
+      "id": "005ae5b2-fb8a-4378-8177-2b79c97f8ecb",
+      "date": "2026-08-20T02:08:34Z",
+      "tag": [
+       "tender"
+      ],
+      "initiationType": "tender",
+      "parties": [
+       {
+        "name": "Landesbetrieb für Küstenschutz (LKN.SH)",
+        "id": "ORG-0001",
+        "identifier": {
+         "id": "t:+4948416670",
+         "legalName": "Landesbetrieb für Küstenschutz (LKN.SH)"
+        },
+        "address": {
+         "streetAddress": "Herzog-Adolf-Str. 1",
+         "locality": "Husum, Nordsee",
+         "region": "DEF07",
+         "postalCode": "25813",
+         "countryName": "DEU"
+        },
+        "contactPoint": {
+         "name": "Gunnar Carstens",
+         "email": "Gunnar.Carstens@lkn.landsh.de",
+         "telephone": "+49 (4841) 667121",
+         "faxNumber": "+49 (4841) 667115",
+         "url": "http://www.schleswig-holstein.de/DE/Landesregierung/LKN/lkn_node.html"
+        },
+        "roles": [
+         "buyer",
+         "evaluationBody",
+         "submissionReceiptBody"
+        ]
+       },
+       {
+        "name": "Ministerium für Energiewende, Klimaschutz, Umwelt und Natur (MEKUN) des Landes S.-H.",
+        "id": "ORG-0002",
+        "identifier": {
+         "id": "t:+494319880",
+         "legalName": "Ministerium für Energiewende, Klimaschutz, Umwelt und Natur (MEKUN) des Landes S.-H."
+        },
+        "address": {
+         "streetAddress": "Mercatorstr. 3",
+         "locality": "Kiel",
+         "region": "DEF02",
+         "postalCode": "24106",
+         "countryName": "DEU"
+        },
+        "contactPoint": {
+         "email": "internetredaktion@mekun.landsh.de",
+         "telephone": "+49 (431)9880"
+        },
+        "roles": [
+         "reviewContactPoint",
+         "reviewBody"
+        ]
+       }
+      ],
+      "buyer": {
+       "name": "Landesbetrieb für Küstenschutz (LKN.SH)",
+       "id": "t:+4948416670",
+       "identifier": {
+        "id": "ORG-0001",
+        "legalName": "Landesbetrieb für Küstenschutz (LKN.SH)"
+       },
+       "address": {
+        "streetAddress": "Herzog-Adolf-Str. 1",
+        "locality": "Husum, Nordsee",
+        "region": "DEF07",
+        "postalCode": "25813",
+        "countryName": "DEU"
+       },
+       "contactPoint": {
+        "name": "Gunnar Carstens",
+        "email": "Gunnar.Carstens@lkn.landsh.de",
+        "telephone": "+49 (4841) 667121",
+        "faxNumber": "+49 (4841) 667115",
+        "url": "http://www.schleswig-holstein.de/DE/Landesregierung/LKN/lkn_node.html"
+       }
+      },
+      "tender": {
+       "id": "b1000000-c0de-4000-a000-00d462593815",
+       "title": "Kauf/Lieferung von 18 Elektro-Fahrzeugen für div. Fachbereiche des LKN.SH (3 Lose)",
+       "description": "Kauf/Lieferung von 18 Elektro-Fahrzeugen für div. Fachbereiche des LKN.SH (3 Lose), siehe Leistungsverzeichnisse",
+       "procuringEntity": {
+        "name": "Landesbetrieb für Küstenschutz (LKN.SH)",
+        "id": "t:+4948416670"
+       },
+       "items": [
+        {
+         "id": "LOT-0001",
+         "classification": {
+          "scheme": "CPV",
+          "id": "34100000",
+          "description": "Motor vehicles"
+         },
+         "quantity": 7,
+         "deliveryAddress": {
+          "streetAddress": "Dockkoogstr. 4 (Bauhof)",
+          "locality": "Husum, Nordsee",
+          "region": "DEF07",
+          "postalCode": "25813",
+          "countryName": "DEU"
+         },
+         "relatedLot": "LOT-0001"
+        },
+        {
+         "id": "LOT-0002",
+         "classification": {
+          "scheme": "CPV",
+          "id": "34100000",
+          "description": "Motor vehicles"
+         },
+         "quantity": 5,
+         "deliveryAddress": {
+          "streetAddress": "Dockkoogstr. 4 (Bauhof)",
+          "locality": "Husum, Nordsee",
+          "region": "DEF07",
+          "postalCode": "25813",
+          "countryName": "DEU"
+         },
+         "relatedLot": "LOT-0002"
+        },
+        {
+         "id": "LOT-0003",
+         "classification": {
+          "scheme": "CPV",
+          "id": "34100000",
+          "description": "Motor vehicles"
+         },
+         "quantity": 6,
+         "deliveryAddress": {
+          "streetAddress": "Hafenstr. 8",
+          "locality": "Meldorf (Holstein)",
+          "region": "DEF05",
+          "postalCode": "25704",
+          "countryName": "DEU"
+         },
+         "relatedLot": "LOT-0003"
+        }
+       ],
+       "procurementMethod": "open",
+       "procurementMethodDetails": "Open",
+       "mainProcurementCategory": "goods",
+       "numberOfTenderers": 0,
+       "documents": [
+        {
+         "id": "DOC-0001",
+         "url": "https://bi-medien.de/ausschreibungsdienste/ausschreibungen/D462593815",
+         "language": "DEU",
+         "relatedLots": [
+          "LOT-0001"
+         ]
+        },
+        {
+         "id": "DOC-0002",
+         "url": "https://bi-medien.de/ausschreibungsdienste/ausschreibungen/D462593815",
+         "language": "DEU",
+         "relatedLots": [
+          "LOT-0002"
+         ]
+        },
+        {
+         "id": "DOC-0003",
+         "url": "https://bi-medien.de/ausschreibungsdienste/ausschreibungen/D462593815",
+         "language": "DEU",
+         "relatedLots": [
+          "LOT-0003"
+         ]
+        }
+       ],
+       "lots": [
+        {
+         "id": "LOT-0001",
+         "title": "Kauf/Lieferung von 7 Pkws (E-Fahrzeugen) für den LKN.SH",
+         "description": "Siehe Leistungsverzeichnis des Loses 1",
+         "contractPeriod": {
+          "startDate": "2026-10-23T00:00:00+02:00",
+          "endDate": "2026-12-18T00:00:00+01:00"
+         }
+        },
+        {
+         "id": "LOT-0002",
+         "title": "Kauf/Lieferung von 5 Hochdachkombis (E-Fahrzeugen) für den LKN.SH",
+         "description": "Siehe Leistungsverzeichnis des Loses 2",
+         "contractPeriod": {
+          "startDate": "2026-10-23T00:00:00+02:00",
+          "endDate": "2026-12-18T00:00:00+01:00"
+         }
+        },
+        {
+         "id": "LOT-0003",
+         "title": "Kauf/Lieferung von 6 Kastenwagen (E-Fahrzeugen) für den Fachbereich 53",
+         "description": "Siehe Leistungsverzeichnis des Loses 3",
+         "contractPeriod": {
+          "startDate": "2026-10-23T00:00:00+02:00",
+          "endDate": "2026-12-18T00:00:00+01:00"
+         }
+        }
+       ],
+       "lotDetails": {
+        "maximumLotsBidPerSupplier": 3,
+        "maximumLotsAwardedPerSupplier": 3
+       }
+      },
+      "language": "DEU"
+     }
+    ],
+    "publisher": {
+     "name": "Bekanntmachungsservice"
+    },
+    "license": "https://opendefinition.org/licenses/cc-zero/",
+    "publicationPolicy": "https://oeffentlichevergabe.de/ui/de/publicationPolicy"
+   }
+  },
+  {
+   "caso": "adjudicación con un proveedor",
+   "payload": {
+    "uri": "https://oeffentlichevergabe.de/api/notices/00725bdd-1ad2-4de5-b6c2-ab6113dabd5f?format=ocds&noticeVersion=01",
+    "version": "1.1",
+    "extensions": [
+     "https://raw.githubusercontent.com/open-contracting-extensions/ocds_lots_extension/bd6a5a0617abcdcf9da19db0e70a899e6b10c91c/extension.json",
+     "https://raw.githubusercontent.com/open-contracting-extensions/ocds_location_extension/v1.1.5/extension.json",
+     "https://raw.githubusercontent.com/open-contracting-extensions/ocds_enquiry_extension/v1.1.5/extension.json",
+     "https://raw.githubusercontent.com/open-contracting-extensions/ocds_coveredBy_extension/9b617f9c3a84f8eb727f273e1bb55a1c5bc7a925/extension.json"
+    ],
+    "publishedDate": "2026-08-16T15:36:06Z",
+    "releases": [
+     {
+      "ocid": "ocds-mnwr74-c13b4c36-d707-43b2-9a3e-3f78f0ccf319",
+      "id": "00725bdd-1ad2-4de5-b6c2-ab6113dabd5f",
+      "date": "2026-08-16T15:36:06Z",
+      "tag": [
+       "award"
+      ],
+      "initiationType": "tender",
+      "parties": [
+       {
+        "name": "Vergabekammer des Landes Berlin",
+        "id": "ORG-0001",
+        "identifier": {
+         "id": "11-1300000V00-74",
+         "legalName": "Vergabekammer des Landes Berlin"
+        },
+        "address": {
+         "streetAddress": "Martin-Luther-Straße 105",
+         "locality": "Berlin",
+         "region": "DE300",
+         "postalCode": "10825",
+         "countryName": "DEU"
+        },
+        "contactPoint": {
+         "email": "vergabekammer@senweb.berlin.de",
+         "telephone": "+49 3090138316",
+         "faxNumber": "+49 3090137613",
+         "url": "https://www.berlin.de/sen/wirtschaft/wirtschaftsrecht/vergabekammer/"
+        },
+        "roles": [
+         "reviewBody"
+        ]
+       },
+       {
+        "name": "Der Regierende Bürgermeister von Berlin - Senatskanzlei",
+        "id": "ORG-0002",
+        "identifier": {
+         "id": "DE321903299",
+         "legalName": "Der Regierende Bürgermeister von Berlin - Senatskanzlei"
+        },
+        "address": {
+         "streetAddress": "Jüdenstr. 1",
+         "locality": "Berlin",
+         "region": "DE300",
+         "postalCode": "10178",
+         "countryName": "DEU"
+        },
+        "contactPoint": {
+         "email": "zvs@senatskanzlei.berlin.de",
+         "telephone": "000"
+        },
+        "roles": [
+         "buyer"
+        ]
+       },
+       {
+        "name": "Der Regierende Bürgermeister von Berlin - Senatskanzlei",
+        "id": "ORG-0003",
+        "identifier": {
+         "id": "DE321903299",
+         "legalName": "Der Regierende Bürgermeister von Berlin - Senatskanzlei"
+        },
+        "address": {
+         "streetAddress": "Jüdenstr. 1",
+         "locality": "Berlin",
+         "region": "DE300",
+         "postalCode": "10178",
+         "countryName": "DEU"
+        },
+        "contactPoint": {
+         "email": "zvs@senatskanzlei.berlin.de",
+         "telephone": "000"
+        },
+        "roles": [
+         "buyer"
+        ]
+       },
+       {
+        "name": "msg systems ag",
+        "id": "ORG-0004",
+        "identifier": {
+         "id": "DE 129 420 400",
+         "legalName": "msg systems ag"
+        },
+        "address": {
+         "streetAddress": "Robert Buerkle Strasse 1",
+         "locality": "Ismaning/München",
+         "region": "DE21H",
+         "postalCode": "85737",
+         "countryName": "DEU"
+        },
+        "contactPoint": {
+         "email": "msg.info-GBP-Vergabeplattformen@msg.group",
+         "telephone": "000"
+        },
+        "roles": [
+         "tenderer",
+         "supplier"
+        ]
+       }
+      ],
+      "buyer": {
+       "name": "Der Regierende Bürgermeister von Berlin - Senatskanzlei",
+       "id": "DE321903299",
+       "identifier": {
+        "id": "ORG-0004",
+        "legalName": "Der Regierende Bürgermeister von Berlin - Senatskanzlei"
+       },
+       "address": {
+        "streetAddress": "Jüdenstr. 1",
+        "locality": "Berlin",
+        "region": "DE300",
+        "postalCode": "10178",
+        "countryName": "DEU"
+       },
+       "contactPoint": {
+        "email": "zvs@senatskanzlei.berlin.de",
+        "telephone": "000"
+       }
+      },
+      "tender": {
+       "id": "c13b4c36-d707-43b2-9a3e-3f78f0ccf319",
+       "title": "Informations- und Unterstützungsstelle Digitalcheck",
+       "description": "Ziel der Informations- und Unterstützungsstelle ist es, den Verantwortlichen bei konkreten Umsetzungsfragen in der Anwendung des durch den Senat beschlossenen Digitalcheck methodisch zu unterstützen, die Gedanken des Digitalchecks zu vermitteln und Fragen zur Durchführung und Dokumentation des Digitalchecks zu klären. Vorgesehen ist neben ad-hoc Unterstützungsleistungen (z.B. telefonischer Art) eine standardisierte Begleitung von Projekten in den Senatsverwaltungen (einschl. Senatskanzlei), beispielsweise durch Workshops. Des Weiteren soll die Informations- und Unterstützungsstelle Schulungsmaßnahmen durchführen und die Wirksamkeit des Digitalchecks und seiner Umsetzungsmodule analysieren. Daraus sollen Ableitungen für eine technische, organisatorische und inhaltliche Weiterentwicklung des Produkts getroffen werden.",
+       "procuringEntity": {
+        "name": "Der Regierende Bürgermeister von Berlin - Senatskanzlei",
+        "id": "DE321903299"
+       },
+       "items": [
+        {
+         "id": "LOT-0000",
+         "classification": {
+          "scheme": "CPV",
+          "id": "72000000",
+          "description": "IT services: consulting, software development, Internet and support"
+         },
+         "additionalClassifications": [
+          {
+           "scheme": "CPV",
+           "id": "72220000",
+           "description": "Systems and technical consultancy services"
+          },
+          {
+           "scheme": "CPV",
+           "id": "79000000",
+           "description": "Business services: law, marketing, consulting, recruitment, printing and security"
+          }
+         ],
+         "deliveryAddress": {
+          "locality": "Berlin",
+          "region": "DE300",
+          "postalCode": "10178",
+          "countryName": "DEU"
+         },
+         "relatedLot": "LOT-0000"
+        }
+       ],
+       "procurementMethod": "open",
+       "procurementMethodDetails": "Open",
+       "mainProcurementCategory": "services",
+       "awardPeriod": {
+        "endDate": "2026-07-20T00:00:00+02:00"
+       },
+       "numberOfTenderers": 1,
+       "tenderers": [
+        {
+         "name": "msg systems ag",
+         "identifier": {
+          "id": "ORG-9000",
+          "legalName": "msg systems ag"
+         },
+         "address": {
+          "streetAddress": "Robert Buerkle Strasse 1",
+          "locality": "Ismaning/München",
+          "region": "DE21H",
+          "postalCode": "85737",
+          "countryName": "DEU"
+         },
+         "contactPoint": {
+          "email": "msg.info-GBP-Vergabeplattformen@msg.group",
+          "telephone": "000"
+         }
+        }
+       ],
+       "lots": [
+        {
+         "id": "LOT-0000",
+         "title": "Informations- und Unterstützungsstelle Digitalcheck",
+         "description": "Ziel der Informations- und Unterstützungsstelle ist es, den Verantwortlichen bei konkreten Umsetzungsfragen in der Anwendung des durch den Senat beschlossenen Digitalcheck methodisch zu unterstützen, die Gedanken des Digitalchecks zu vermitteln und Fragen zur Durchführung und Dokumentation des Digitalchecks zu klären. Vorgesehen ist neben ad-hoc Unterstützungsleistungen (z.B. telefonischer Art) eine standardisierte Begleitung von Projekten in den Senatsverwaltungen (einschl. Senatskanzlei), beispielsweise durch Workshops. Des Weiteren soll die Informations- und Unterstützungs-stelle Schulungsmaßnahmen durchführen und die Wirksamkeit des Digitalchecks und seiner Umsetzungsmodule analysieren. Daraus sollen Ableitungen für eine technische, organisatorische und inhaltliche Weiterentwicklung des Produkts getroffen werden.",
+         "contractPeriod": {
+          "durationInDays": 540
+         }
+        }
+       ]
+      },
+      "awards": [
+       {
+        "id": "LOT-0000",
+        "title": "Informations- und Unterstützungsstelle Digitalcheck",
+        "status": "active",
+        "date": "2026-07-20T00:00:00+02:00",
+        "suppliers": [
+         {
+          "name": "msg systems ag",
+          "id": "DE 129 420 400",
+          "identifier": {
+           "id": "ORG-9000",
+           "legalName": "msg systems ag"
+          },
+          "address": {
+           "streetAddress": "Robert Buerkle Strasse 1",
+           "locality": "Ismaning/München",
+           "region": "DE21H",
+           "postalCode": "85737",
+           "countryName": "DEU"
+          },
+          "contactPoint": {
+           "email": "msg.info-GBP-Vergabeplattformen@msg.group",
+           "telephone": "000"
+          }
+         }
+        ],
+        "relatedLots": [
+         "LOT-0000"
+        ]
+       }
+      ],
+      "contracts": [
+       {
+        "id": "CON-0001",
+        "awardID": "CON-0001",
+        "title": "Informations- und Unterstützungsstelle Digitalcheck",
+        "status": "active",
+        "items": [
+         {
+          "id": "LOT-0000",
+          "relatedLot": "LOT-0000"
+         }
+        ],
+        "dateSigned": "2026-07-19T22:00:00.000Z"
+       }
+      ],
+      "language": "DEU"
+     }
+    ],
+    "publisher": {
+     "name": "Bekanntmachungsservice"
+    },
+    "license": "https://opendefinition.org/licenses/cc-zero/",
+    "publicationPolicy": "https://oeffentlichevergabe.de/ui/de/publicationPolicy"
+   }
+  },
+  {
+   "caso": "adjudicación con VARIOS proveedores (acuerdo marco)",
+   "payload": {
+    "uri": "https://oeffentlichevergabe.de/api/notices/00d5b466-e4e2-446a-ab43-3599854af4f6?format=ocds&noticeVersion=01",
+    "version": "1.1",
+    "extensions": [
+     "https://raw.githubusercontent.com/open-contracting-extensions/ocds_lots_extension/bd6a5a0617abcdcf9da19db0e70a899e6b10c91c/extension.json",
+     "https://raw.githubusercontent.com/open-contracting-extensions/ocds_location_extension/v1.1.5/extension.json",
+     "https://raw.githubusercontent.com/open-contracting-extensions/ocds_enquiry_extension/v1.1.5/extension.json",
+     "https://raw.githubusercontent.com/open-contracting-extensions/ocds_coveredBy_extension/9b617f9c3a84f8eb727f273e1bb55a1c5bc7a925/extension.json"
+    ],
+    "publishedDate": "2026-08-13T02:22:06Z",
+    "releases": [
+     {
+      "ocid": "ocds-mnwr74-254b44fe-08c6-4d85-8fa7-dafde1646d48",
+      "id": "00d5b466-e4e2-446a-ab43-3599854af4f6",
+      "date": "2026-08-13T02:22:06Z",
+      "tag": [
+       "award"
+      ],
+      "initiationType": "tender",
+      "parties": [
+       {
+        "name": "Markt Oberstaufen",
+        "id": "ORG-0001",
+        "identifier": {
+         "id": "Leitweg-ID 09780132-GKZ00-76",
+         "legalName": "Markt Oberstaufen"
+        },
+        "address": {
+         "streetAddress": "Schloßstr. 8",
+         "locality": "Oberstaufen",
+         "region": "DE27E",
+         "postalCode": "87534",
+         "countryName": "DEU"
+        },
+        "contactPoint": {
+         "email": "hauptamt@oberstaufen.info",
+         "telephone": "+49838693009-0",
+         "url": "https://www.oberstaufen.info"
+        },
+        "roles": [
+         "buyer",
+         "processContactPoint",
+         "reviewContactPoint"
+        ]
+       },
+       {
+        "name": "Regierung von Oberbayern\nVergabekammer Südbayern",
+        "id": "ORG-0002",
+        "identifier": {
+         "id": "DE 811335517",
+         "legalName": "Regierung von Oberbayern\nVergabekammer Südbayern"
+        },
+        "address": {
+         "streetAddress": "Maximilianstraße 39",
+         "locality": "München",
+         "region": "DE212",
+         "postalCode": "80538",
+         "countryName": "DEU"
+        },
+        "roles": [
+         "mediationBody",
+         "reviewBody"
+        ]
+       },
+       {
+        "name": "Magirus GmbH",
+        "id": "ORG-0003",
+        "identifier": {
+         "id": "DE 141995414",
+         "legalName": "Magirus GmbH"
+        },
+        "address": {
+         "streetAddress": "Graf-Arco-Straße 30",
+         "locality": "Ulm",
+         "region": "DE144",
+         "postalCode": "89079",
+         "countryName": "DEU"
+        },
+        "roles": [
+         "tenderer",
+         "supplier"
+        ]
+       },
+       {
+        "name": "Fischer Feuerlösch- und Arbeitsschutzgeräte GmbH",
+        "id": "ORG-0004",
+        "identifier": {
+         "id": "DE811490674",
+         "legalName": "Fischer Feuerlösch- und Arbeitsschutzgeräte GmbH"
+        },
+        "address": {
+         "locality": "Dinkelscherben",
+         "region": "DE276",
+         "postalCode": "86424",
+         "countryName": "DEU"
+        },
+        "roles": [
+         "tenderer",
+         "supplier"
+        ]
+       }
+      ],
+      "buyer": {
+       "name": "Markt Oberstaufen",
+       "id": "Leitweg-ID 09780132-GKZ00-76",
+       "identifier": {
+        "id": "ORG-0001",
+        "legalName": "Markt Oberstaufen"
+       },
+       "address": {
+        "streetAddress": "Schloßstr. 8",
+        "locality": "Oberstaufen",
+        "region": "DE27E",
+        "postalCode": "87534",
+        "countryName": "DEU"
+       },
+       "contactPoint": {
+        "email": "hauptamt@oberstaufen.info",
+        "telephone": "+49838693009-0",
+        "url": "https://www.oberstaufen.info"
+       }
+      },
+      "tender": {
+       "id": "254b44fe-08c6-4d85-8fa7-dafde1646d48",
+       "title": "Oberstaufen DL",
+       "description": "Lieferung Drehleiter DLA(K) 23/12 nach DIN 14502, EN 1846 und 14043: 2014-04",
+       "procuringEntity": {
+        "name": "Markt Oberstaufen",
+        "id": "Leitweg-ID 09780132-GKZ00-76"
+       },
+       "items": [
+        {
+         "id": "LOT-0001",
+         "classification": {
+          "scheme": "CPV",
+          "id": "34144211",
+          "description": "Turntable-ladder trucks"
+         },
+         "quantity": 1,
+         "unit": {
+          "scheme": "UNCEFACT",
+          "id": "H87"
+         },
+         "deliveryAddress": {
+          "streetAddress": "Schloßstraße 8",
+          "locality": "Oberstaufen",
+          "region": "DE27E",
+          "postalCode": "87534",
+          "countryName": "DEU"
+         },
+         "relatedLot": "LOT-0001"
+        },
+        {
+         "id": "LOT-0002",
+         "classification": {
+          "scheme": "CPV",
+          "id": "35110000",
+          "description": "Firefighting, rescue and safety equipment"
+         },
+         "quantity": 1,
+         "unit": {
+          "scheme": "UNCEFACT",
+          "id": "H87"
+         },
+         "deliveryAddress": {
+          "streetAddress": "Schloßstraße 8",
+          "locality": "Oberstaufen",
+          "region": "DE27E",
+          "postalCode": "87534",
+          "countryName": "DEU"
+         },
+         "relatedLot": "LOT-0002"
+        }
+       ],
+       "value": {
+        "amount": 1065000.0,
+        "currency": "EUR"
+       },
+       "procurementMethod": "open",
+       "procurementMethodDetails": "Open",
+       "mainProcurementCategory": "goods",
+       "numberOfTenderers": 2,
+       "tenderers": [
+        {
+         "name": "Magirus GmbH",
+         "identifier": {
+          "id": "ORG-0003",
+          "legalName": "Magirus GmbH"
+         },
+         "address": {
+          "streetAddress": "Graf-Arco-Straße 30",
+          "locality": "Ulm",
+          "region": "DE144",
+          "postalCode": "89079",
+          "countryName": "DEU"
+         }
+        },
+        {
+         "name": "Fischer Feuerlösch- und Arbeitsschutzgeräte GmbH",
+         "identifier": {
+          "id": "ORG-0004",
+          "legalName": "Fischer Feuerlösch- und Arbeitsschutzgeräte GmbH"
+         },
+         "address": {
+          "locality": "Dinkelscherben",
+          "region": "DE276",
+          "postalCode": "86424",
+          "countryName": "DEU"
+         }
+        }
+       ],
+       "lots": [
+        {
+         "id": "LOT-0001",
+         "title": "Fahrgestell + Hubrettungsaufbau",
+         "description": "Lieferung Fahrgestell und Hubrettungsaufbau für Drehleiter DLA(K) 23/12 nach DIN 14502, EN 1846 und 14043: 2014-04 für die Feuerwehr Oberstaufen",
+         "value": {
+          "amount": 1045000.0,
+          "currency": "EUR"
+         }
+        },
+        {
+         "id": "LOT-0002",
+         "title": "Feuerwehrtechnische Beladung",
+         "description": "Lieferung von Beladungsteilen für Drehleiter DLA(K) 23/12 nach DIN 14502, EN 1846 und 14043: 2014-04 für die Feuerwehr Oberstaufen",
+         "value": {
+          "amount": 20000.0,
+          "currency": "EUR"
+         }
+        }
+       ]
+      },
+      "awards": [
+       {
+        "id": "LOT-0001",
+        "title": "Fahrgestell + Feuerwehraufbau",
+        "status": "active",
+        "date": "2026-07-16T00:00:00+02:00",
+        "suppliers": [
+         {
+          "name": "Magirus GmbH",
+          "id": "DE 141995414",
+          "identifier": {
+           "id": "ORG-0003",
+           "legalName": "Magirus GmbH"
+          },
+          "address": {
+           "streetAddress": "Graf-Arco-Straße 30",
+           "locality": "Ulm",
+           "region": "DE144",
+           "postalCode": "89079",
+           "countryName": "DEU"
+          }
+         },
+         {
+          "name": "Fischer Feuerlösch- und Arbeitsschutzgeräte GmbH",
+          "id": "DE811490674",
+          "identifier": {
+           "id": "ORG-0004",
+           "legalName": "Fischer Feuerlösch- und Arbeitsschutzgeräte GmbH"
+          },
+          "address": {
+           "locality": "Dinkelscherben",
+           "region": "DE276",
+           "postalCode": "86424",
+           "countryName": "DEU"
+          }
+         }
+        ],
+        "relatedLots": [
+         "LOT-0001"
+        ]
+       },
+       {
+        "id": "LOT-0002",
+        "title": "Fahrgestell + Feuerwehraufbau",
+        "status": "active",
+        "date": "2026-07-16T00:00:00+02:00",
+        "value": {
+         "amount": 15801.0,
+         "currency": "EUR"
+        },
+        "suppliers": [
+         {
+          "name": "Magirus GmbH",
+          "id": "DE 141995414",
+          "identifier": {
+           "id": "ORG-0003",
+           "legalName": "Magirus GmbH"
+          },
+          "address": {
+           "streetAddress": "Graf-Arco-Straße 30",
+           "locality": "Ulm",
+           "region": "DE144",
+           "postalCode": "89079",
+           "countryName": "DEU"
+          }
+         },
+         {
+          "name": "Fischer Feuerlösch- und Arbeitsschutzgeräte GmbH",
+          "id": "DE811490674",
+          "identifier": {
+           "id": "ORG-0004",
+           "legalName": "Fischer Feuerlösch- und Arbeitsschutzgeräte GmbH"
+          },
+          "address": {
+           "locality": "Dinkelscherben",
+           "region": "DE276",
+           "postalCode": "86424",
+           "countryName": "DEU"
+          }
+         }
+        ],
+        "relatedLots": [
+         "LOT-0002"
+        ]
+       }
+      ],
+      "contracts": [
+       {
+        "id": "CON-0001",
+        "awardID": "CON-0001",
+        "title": "Fahrgestell + Feuerwehraufbau",
+        "status": "active",
+        "value": {
+         "amount": 1142000.0,
+         "currency": "EUR"
+        },
+        "items": [
+         {
+          "id": "LOT-0001",
+          "relatedLot": "LOT-0001"
+         },
+         {
+          "id": "LOT-0002",
+          "relatedLot": "LOT-0002"
+         }
+        ],
+        "dateSigned": "2026-07-15T22:00:00.000Z"
+       },
+       {
+        "id": "CON-0002",
+        "awardID": "CON-0002",
+        "title": "Feuerwehrtechnische Ausstattung",
+        "status": "active",
+        "value": {
+         "amount": 15801.0,
+         "currency": "EUR"
+        },
+        "items": [
+         {
+          "id": "LOT-0001",
+          "relatedLot": "LOT-0001"
+         },
+         {
+          "id": "LOT-0002",
+          "relatedLot": "LOT-0002"
+         }
+        ],
+        "dateSigned": "2026-07-15T22:00:00.000Z"
+       }
+      ],
+      "language": "DEU"
+     }
+    ],
+    "publisher": {
+     "name": "Bekanntmachungsservice"
+    },
+    "license": "https://opendefinition.org/licenses/cc-zero/",
+    "publicationPolicy": "https://oeffentlichevergabe.de/ui/de/publicationPolicy"
+   }
+  },
+  {
+   "caso": "Aufhebung: award unsuccessful",
+   "payload": {
+    "uri": "https://oeffentlichevergabe.de/api/notices/008b7d74-6c76-412e-bf72-67ca753055aa?format=ocds&noticeVersion=01",
+    "version": "1.1",
+    "extensions": [
+     "https://raw.githubusercontent.com/open-contracting-extensions/ocds_lots_extension/bd6a5a0617abcdcf9da19db0e70a899e6b10c91c/extension.json",
+     "https://raw.githubusercontent.com/open-contracting-extensions/ocds_location_extension/v1.1.5/extension.json",
+     "https://raw.githubusercontent.com/open-contracting-extensions/ocds_enquiry_extension/v1.1.5/extension.json",
+     "https://raw.githubusercontent.com/open-contracting-extensions/ocds_coveredBy_extension/9b617f9c3a84f8eb727f273e1bb55a1c5bc7a925/extension.json"
+    ],
+    "publishedDate": "2026-08-13T02:22:19Z",
+    "releases": [
+     {
+      "ocid": "ocds-mnwr74-43943335-25e6-4850-8784-441c00ed2e44",
+      "id": "008b7d74-6c76-412e-bf72-67ca753055aa",
+      "date": "2026-08-13T02:22:19Z",
+      "tag": [
+       "award"
+      ],
+      "initiationType": "tender",
+      "parties": [
+       {
+        "name": "AOK Bayern - Die Gesundheitskasse",
+        "id": "ORG-0001",
+        "identifier": {
+         "id": "DE811695320",
+         "legalName": "AOK Bayern - Die Gesundheitskasse"
+        },
+        "address": {
+         "locality": "München",
+         "region": "DE212",
+         "postalCode": "81739",
+         "countryName": "DEU"
+        },
+        "contactPoint": {
+         "email": "vergabestelle1@by.aok.de",
+         "telephone": "089 62730267"
+        },
+        "roles": [
+         "buyer",
+         "processContactPoint"
+        ]
+       },
+       {
+        "name": "Vergabekammern des Bundes beim Bundeskartellamt",
+        "id": "ORG-0002",
+        "identifier": {
+         "id": "t:022894990",
+         "legalName": "Vergabekammern des Bundes beim Bundeskartellamt"
+        },
+        "address": {
+         "locality": "Bonn",
+         "region": "DEA22",
+         "postalCode": "53123",
+         "countryName": "DEU"
+        },
+        "contactPoint": {
+         "email": "vk@bundeskartellamt.bund.de",
+         "telephone": "022894990"
+        },
+        "roles": [
+         "reviewBody"
+        ]
+       }
+      ],
+      "buyer": {
+       "name": "AOK Bayern - Die Gesundheitskasse",
+       "id": "DE811695320",
+       "identifier": {
+        "id": "ORG-0001",
+        "legalName": "AOK Bayern - Die Gesundheitskasse"
+       },
+       "address": {
+        "locality": "München",
+        "region": "DE212",
+        "postalCode": "81739",
+        "countryName": "DEU"
+       },
+       "contactPoint": {
+        "email": "vergabestelle1@by.aok.de",
+        "telephone": "089 62730267"
+       }
+      },
+      "tender": {
+       "id": "43943335-25e6-4850-8784-441c00ed2e44",
+       "title": "Aufhebung des Open house Verfahrens Arzneimittelrabattverträge Teriparatid, ATC H05AA02",
+       "description": "Das Open house Verfahren Arzneimittelrabattverträge Teriparatid, ATC H05AA02, wird mit sofortiger Wirkung zum 30.09.2026 aufgehoben.  Alle bestehenden Verträge werden zum 30.09.2026 gekündigt. Der Abschluss von Verträgen ist im Rahmen dieses Open House Verfahrens nicht mehr möglich.",
+       "procuringEntity": {
+        "name": "AOK Bayern - Die Gesundheitskasse",
+        "id": "DE811695320"
+       },
+       "items": [
+        {
+         "id": "LOT-0001",
+         "classification": {
+          "scheme": "CPV",
+          "id": "33600000",
+          "description": "Pharmaceutical products"
+         },
+         "deliveryAddress": {
+          "region": "DE212",
+          "countryName": "DEU"
+         },
+         "relatedLot": "LOT-0001"
+        }
+       ],
+       "procurementMethod": "open",
+       "procurementMethodDetails": "Open",
+       "mainProcurementCategory": "goods",
+       "numberOfTenderers": 0,
+       "lots": [
+        {
+         "id": "LOT-0001",
+         "title": "Aufhebung des Open house Verfahrens Arzneimittelrabattverträge Teriparatid, ATC H05AA02",
+         "description": "Das Open house Verfahren Arzneimittelrabattverträge Teriparatid, ATC H05AA02, wird mit sofortiger Wirkung zum 30.09.2026 aufgehoben.  Alle bestehenden Verträge werden zum 30.09.2026 gekündigt. Der Abschluss von Verträgen ist im Rahmen dieses Open House Verfahrens nicht mehr möglich.",
+         "contractPeriod": {
+          "startDate": "2026-02-01T00:00:00+01:00",
+          "endDate": "2028-01-31T00:00:00+01:00"
+         }
+        }
+       ]
+      },
+      "awards": [
+       {
+        "id": "LOT-0001",
+        "status": "unsuccessful",
+        "relatedLots": [
+         "LOT-0001"
+        ]
+       }
+      ],
+      "language": "DEU"
+     }
+    ],
+    "publisher": {
+     "name": "Bekanntmachungsservice"
+    },
+    "license": "https://opendefinition.org/licenses/cc-zero/",
+    "publicationPolicy": "https://oeffentlichevergabe.de/ui/de/publicationPolicy"
+   }
+  },
+  {
+   "caso": "adjudicación formalizada (con contracts)",
+   "payload": {
+    "uri": "https://oeffentlichevergabe.de/api/notices/0009e1d7-b1e4-4504-b545-815b3128eb4a?format=ocds&noticeVersion=01",
+    "version": "1.1",
+    "extensions": [
+     "https://raw.githubusercontent.com/open-contracting-extensions/ocds_lots_extension/bd6a5a0617abcdcf9da19db0e70a899e6b10c91c/extension.json",
+     "https://raw.githubusercontent.com/open-contracting-extensions/ocds_location_extension/v1.1.5/extension.json",
+     "https://raw.githubusercontent.com/open-contracting-extensions/ocds_enquiry_extension/v1.1.5/extension.json",
+     "https://raw.githubusercontent.com/open-contracting-extensions/ocds_coveredBy_extension/9b617f9c3a84f8eb727f273e1bb55a1c5bc7a925/extension.json"
+    ],
+    "publishedDate": "2026-08-20T02:06:11Z",
+    "releases": [
+     {
+      "ocid": "ocds-mnwr74-6486b300-98ff-4999-9978-1e77f4633e3e",
+      "id": "0009e1d7-b1e4-4504-b545-815b3128eb4a",
+      "date": "2026-08-20T02:06:11Z",
+      "tag": [
+       "award"
+      ],
+      "initiationType": "tender",
+      "parties": [
+       {
+        "name": "Stiftung Preußische Schlösser und Gärten Berlin-Brandenburg",
+        "id": "ORG-0001",
+        "identifier": {
+         "id": "DE138408360",
+         "legalName": "Stiftung Preußische Schlösser und Gärten Berlin-Brandenburg"
+        },
+        "address": {
+         "streetAddress": "Allee nach Sanssouci 6",
+         "locality": "Potsdam",
+         "region": "DE404",
+         "postalCode": "14471",
+         "countryName": "DEU"
+        },
+        "contactPoint": {
+         "name": "Vergabestelle",
+         "email": "vergabestelle@spsg.de",
+         "telephone": "+49 3319694-0",
+         "faxNumber": "+49 3319694-373",
+         "url": "https://spsg.de"
+        },
+        "roles": [
+         "buyer",
+         "processContactPoint"
+        ]
+       },
+       {
+        "name": "Stiftung Preußische Schlösser und Gärten Berlin-Brandenburg",
+        "id": "ORG-0002",
+        "identifier": {
+         "id": "DE138408360",
+         "legalName": "Stiftung Preußische Schlösser und Gärten Berlin-Brandenburg"
+        },
+        "address": {
+         "streetAddress": "Allee nach Sanssouci 6",
+         "locality": "Potsdam",
+         "region": "DE404",
+         "postalCode": "14471",
+         "countryName": "DEU"
+        },
+        "contactPoint": {
+         "name": "Vergabestelle",
+         "email": "vergabestelle@spsg.de",
+         "telephone": "+49 3319694-0",
+         "faxNumber": "+49 3319694-373",
+         "url": "https://spsg.de"
+        },
+        "roles": [
+         "reviewContactPoint"
+        ]
+       },
+       {
+        "name": "Vergabekammer des Landes Brandenburg beim Ministerium für Wirtschaft, Arbeit und Energie",
+        "id": "ORG-0003",
+        "identifier": {
+         "id": "t:03318661719",
+         "legalName": "Vergabekammer des Landes Brandenburg beim Ministerium für Wirtschaft, Arbeit und Energie"
+        },
+        "address": {
+         "streetAddress": "Heinrich-Mann-Allee 107",
+         "locality": "Potsdam",
+         "region": "DE404",
+         "postalCode": "14473",
+         "countryName": "DEU"
+        },
+        "contactPoint": {
+         "name": "Vergabekammer",
+         "email": "Vergabekammer@MWAE.Brandenburg.de",
+         "telephone": "+49 331866-1719",
+         "faxNumber": "+49 331866-1652",
+         "url": "https://mwae.brandenburg.de/"
+        },
+        "roles": [
+         "reviewBody"
+        ]
+       },
+       {
+        "name": "EGGERS Umwelttechnik GmbH",
+        "id": "ORG-0004",
+        "identifier": {
+         "id": "HRB 47580 Hamburg",
+         "legalName": "EGGERS Umwelttechnik GmbH"
+        },
+        "address": {
+         "streetAddress": "Strausberger Str. 8i",
+         "locality": "Herzfelde OT Rüdersdorf",
+         "region": "DE409",
+         "postalCode": "15378",
+         "countryName": "DEU"
+        },
+        "contactPoint": {
+         "email": "berlin@eggers-umwelttechnik.de",
+         "telephone": "03343480550",
+         "faxNumber": "033434805510",
+         "url": "http://www.eggers-gruppe.de"
+        },
+        "roles": [
+         "tenderer",
+         "supplier"
+        ]
+       }
+      ],
+      "buyer": {
+       "name": "Stiftung Preußische Schlösser und Gärten Berlin-Brandenburg",
+       "id": "DE138408360",
+       "identifier": {
+        "id": "ORG-0001",
+        "legalName": "Stiftung Preußische Schlösser und Gärten Berlin-Brandenburg"
+       },
+       "address": {
+        "streetAddress": "Allee nach Sanssouci 6",
+        "locality": "Potsdam",
+        "region": "DE404",
+        "postalCode": "14471",
+        "countryName": "DEU"
+       },
+       "contactPoint": {
+        "name": "Vergabestelle",
+        "email": "vergabestelle@spsg.de",
+        "telephone": "+49 3319694-0",
+        "faxNumber": "+49 3319694-373",
+        "url": "https://spsg.de"
+       }
+      },
+      "tender": {
+       "id": "6486b300-98ff-4999-9978-1e77f4633e3e",
+       "title": "Wasserhaltung Oberflächengewässer, Römische Bäder im Park Sanssouci",
+       "description": "Wasserhaltungsmaßnahmen an offenen Gewässern",
+       "procuringEntity": {
+        "name": "Stiftung Preußische Schlösser und Gärten Berlin-Brandenburg",
+        "id": "DE138408360"
+       },
+       "items": [
+        {
+         "id": "LOT-0001",
+         "classification": {
+          "scheme": "CPV",
+          "id": "45240000",
+          "description": "Construction work for water projects"
+         },
+         "additionalClassifications": [
+          {
+           "scheme": "CPV",
+           "id": "45212350",
+           "description": "Buildings of particular historical or architectural interest"
+          }
+         ],
+         "deliveryAddress": {
+          "streetAddress": "Lennéstr. 32A",
+          "locality": "Potsdam",
+          "region": "DE404",
+          "postalCode": "14471",
+          "countryName": "DEU"
+         },
+         "relatedLot": "LOT-0001"
+        }
+       ],
+       "procurementMethod": "open",
+       "procurementMethodDetails": "Open",
+       "mainProcurementCategory": "works",
+       "numberOfTenderers": 1,
+       "tenderers": [
+        {
+         "name": "EGGERS Umwelttechnik GmbH",
+         "identifier": {
+          "id": "ORG-0004",
+          "legalName": "EGGERS Umwelttechnik GmbH"
+         },
+         "address": {
+          "streetAddress": "Strausberger Str. 8i",
+          "locality": "Herzfelde OT Rüdersdorf",
+          "region": "DE409",
+          "postalCode": "15378",
+          "countryName": "DEU"
+         },
+         "contactPoint": {
+          "email": "berlin@eggers-umwelttechnik.de",
+          "telephone": "03343480550",
+          "faxNumber": "033434805510",
+          "url": "http://www.eggers-gruppe.de"
+         }
+        }
+       ],
+       "lots": [
+        {
+         "id": "LOT-0001",
+         "title": "Wasserhaltung Oberflächengewässer, Römische Bäder im Park Sanssouci",
+         "description": "Die zu erbringenden Leistungen umfassen unter anderem:\n\n- Aufbau, Unterhalt und Abbau einer Wasserhaltungseinrichtung mit wasserbefüllten Schlauchdämmen\n- Absenkung von Oberflächengewässern in zwei Bereichen (Volumen 72 m3 und 150 m3)\n- Ausführung in zwei Teilabschnitten (4 Wochen und 8 Wochen)",
+         "contractPeriod": {
+          "startDate": "2026-09-14T00:00:00+02:00",
+          "endDate": "2027-05-31T00:00:00+02:00"
+         }
+        }
+       ]
+      },
+      "awards": [
+       {
+        "id": "LOT-0001",
+        "title": "EGGERS Umwelttechnik GmbH, 15378 Herzfelde OT Rüdersdorf",
+        "status": "active",
+        "date": "2026-08-13T00:00:00+02:00",
+        "value": {
+         "amount": 280483.2,
+         "currency": "EUR"
+        },
+        "relatedLots": [
+         "LOT-0001"
+        ]
+       }
+      ],
+      "contracts": [
+       {
+        "id": "CON-0001",
+        "awardID": "CON-0001",
+        "title": "EGGERS Umwelttechnik GmbH, 15378 Herzfelde OT Rüdersdorf",
+        "status": "active",
+        "value": {
+         "amount": 82420.61,
+         "currency": "EUR"
+        },
+        "items": [
+         {
+          "id": "LOT-0001",
+          "relatedLot": "LOT-0001"
+         }
+        ],
+        "dateSigned": "2026-08-12T22:00:00.000Z"
+       }
+      ],
+      "language": "DEU"
+     }
+    ],
+    "publisher": {
+     "name": "Bekanntmachungsservice"
+    },
+    "license": "https://opendefinition.org/licenses/cc-zero/",
+    "publicationPolicy": "https://oeffentlichevergabe.de/ui/de/publicationPolicy"
+   }
+  },
+  {
+   "caso": "planning / Vorinformation",
+   "payload": {
+    "uri": "https://oeffentlichevergabe.de/api/notices/01ef18d3-279f-4728-8ace-4dab901f7f88?format=ocds&noticeVersion=01",
+    "version": "1.1",
+    "extensions": [
+     "https://raw.githubusercontent.com/open-contracting-extensions/ocds_lots_extension/bd6a5a0617abcdcf9da19db0e70a899e6b10c91c/extension.json",
+     "https://raw.githubusercontent.com/open-contracting-extensions/ocds_location_extension/v1.1.5/extension.json",
+     "https://raw.githubusercontent.com/open-contracting-extensions/ocds_enquiry_extension/v1.1.5/extension.json",
+     "https://raw.githubusercontent.com/open-contracting-extensions/ocds_coveredBy_extension/9b617f9c3a84f8eb727f273e1bb55a1c5bc7a925/extension.json"
+    ],
+    "publishedDate": "2026-08-21T02:08:08Z",
+    "releases": [
+     {
+      "ocid": "ocds-mnwr74-0891b60a-846a-47c0-8d90-11bbde87d560",
+      "id": "01ef18d3-279f-4728-8ace-4dab901f7f88",
+      "date": "2026-08-21T02:08:08Z",
+      "tag": [
+       "planning"
+      ],
+      "initiationType": "tender",
+      "parties": [
+       {
+        "name": "Bundesamt für Seeschifffahrt und Hydrographie",
+        "id": "ORG-0001",
+        "identifier": {
+         "id": "991-01889-13",
+         "legalName": "Bundesamt für Seeschifffahrt und Hydrographie"
+        },
+        "address": {
+         "locality": "Hamburg",
+         "region": "DE600",
+         "postalCode": "20359",
+         "countryName": "DEU"
+        },
+        "contactPoint": {
+         "email": "vergabestelle@bsh.de",
+         "telephone": "000"
+        },
+        "roles": [
+         "buyer",
+         "processContactPoint"
+        ]
+       },
+       {
+        "name": "Bundeskartellamt - Vergabekammer des Bundes",
+        "id": "ORG-0002",
+        "identifier": {
+         "id": "+4922894990",
+         "legalName": "Bundeskartellamt - Vergabekammer des Bundes"
+        },
+        "address": {
+         "locality": "Bonn",
+         "region": "DEA22",
+         "postalCode": "53113",
+         "countryName": "DEU"
+        },
+        "contactPoint": {
+         "email": "vk@bundeskartellamt.bund.de"
+        },
+        "roles": [
+         "reviewBody"
+        ]
+       }
+      ],
+      "buyer": {
+       "name": "Bundesamt für Seeschifffahrt und Hydrographie",
+       "id": "991-01889-13",
+       "identifier": {
+        "id": "ORG-0000",
+        "legalName": "Bundesamt für Seeschifffahrt und Hydrographie"
+       },
+       "address": {
+        "locality": "Hamburg",
+        "region": "DE600",
+        "postalCode": "20359",
+        "countryName": "DEU"
+       },
+       "contactPoint": {
+        "email": "vergabestelle@bsh.de",
+        "telephone": "000"
+       }
+      },
+      "tender": {
+       "title": "Gesamtvertrag zu den Ökologischen Untersuchungen der Schutzgüter Benthos und Fische in der Deutschen Ausschließlichen Wirtschaftszone der Nordsee für die Flächenvoruntersuchung",
+       "description": "Das Bundesamt für Seeschifffahrt und Hydrographie (BSH) beabsichtigt die Vergabe von Dienstleistungen zur Erfassung, Auswertung und Dokumentation von Meeresumweltdaten im Rahmen der zentralen Voruntersuchung von Flächen für die Offshore-Windenergie in der deutschen Ausschließlichen Wirtschaftszone (AWZ) der Nordsee gemäß Windenergie-auf-See-Gesetz (WindSeeG).\nDie Leistungen umfassen die Planung und Durchführung meeresbiologischer Untersuchungen der Schutzgüter Benthos (Infauna, Epifauna einschl. Sediment), Fische sowie – bei entsprechendem Bedarf – die Erfassung und Bewertung mariner Biotope. Die Untersuchungen erfolgen auf Untersuchungs- und Referenzflächen in mehreren saisonalen Erfassungskampagnen nach Standarduntersuchungskonzept (StUK4, 2013) sowie weiterer einschlägiger fachlicher Standards.\nZum Leistungsumfang gehören insbesondere die Durchführung der erforderlichen Probenahmen auf See, die taxonomische Bearbeitung und fachliche Auswertung der erhobenen Daten, die qualitätsgesicherte Datenlieferung an das Fachinformationssystem MARLIN des BSH sowie die Erstellung von Kampagnen-, Zwischen- und Abschlussberichten einschließlich fachlicher Bestandscharakterisierung, Bewertung der Schutzgüter und qualitativer Auswirkungsprognosen.",
+       "procuringEntity": {
+        "name": "Bundesamt für Seeschifffahrt und Hydrographie",
+        "id": "991-01889-13"
+       },
+       "items": [
+        {
+         "id": "LOT-0000",
+         "classification": {
+          "scheme": "CPV",
+          "id": "90710000",
+          "description": "Environmental management"
+         },
+         "deliveryLocation": {
+          "description": "Deutsche AWZ der Nordsee"
+         },
+         "deliveryAddress": {
+          "region": "DE600",
+          "countryName": "DEU"
+         },
+         "relatedLot": "LOT-0000"
+        }
+       ],
+       "procurementMethodDetails": "Negotiated with prior publication of a call for competition / competitive with negotiation",
+       "mainProcurementCategory": "services",
+       "numberOfTenderers": 0,
+       "lots": [
+        {
+         "id": "LOT-0000",
+         "title": "Gesamtvertrag zu den Ökologischen Untersuchungen der Schutzgüter Benthos und Fische in der Deutschen Ausschließlichen Wirtschaftszone der Nordsee für die Flächenvoruntersuchung",
+         "description": "Die Leistungen umfassen die Planung und Durchführung meeresbiologischer Untersuchungen der Schutzgüter Benthos (Infauna, Epifauna einschl. Sediment), Fische sowie – bei entsprechendem Bedarf – die Erfassung und Bewertung mariner Biotope. Die Untersuchungen erfolgen auf Untersuchungs- und Referenzflächen in mehreren saisonalen Erfassungskampagnen nach Standarduntersuchungskonzept (StUK4, 2013) sowie weiterer einschlägiger fachlicher Standards.\nZum Leistungsumfang gehören insbesondere die Durchführung der erforderlichen Probenahmen auf See, die taxonomische Bearbeitung und fachliche Auswertung der erhobenen Daten, die qualitätsgesicherte Datenlieferung an das Fachinformationssystem MARLIN des BSH sowie die Erstellung von Kampagnen-, Zwischen- und Abschlussberichten einschließlich fachlicher Bestandscharakterisierung, Bewertung der Schutzgüter und qualitativer Auswirkungsprognosen."
+        }
+       ]
+      },
+      "language": "DEU"
+     }
+    ],
+    "publisher": {
+     "name": "Bekanntmachungsservice"
+    },
+    "license": "https://opendefinition.org/licenses/cc-zero/",
+    "publicationPolicy": "https://oeffentlichevergabe.de/ui/de/publicationPolicy"
+   }
+  },
+  {
+   "caso": "sin tag (relevado de service.bund.de)",
+   "payload": {
+    "uri": "https://oeffentlichevergabe.de/api/notices/000de2e8-3787-4a9d-9411-951f5405e945?format=ocds&noticeVersion=01",
+    "version": "1.1",
+    "extensions": [
+     "https://raw.githubusercontent.com/open-contracting-extensions/ocds_lots_extension/bd6a5a0617abcdcf9da19db0e70a899e6b10c91c/extension.json",
+     "https://raw.githubusercontent.com/open-contracting-extensions/ocds_location_extension/v1.1.5/extension.json",
+     "https://raw.githubusercontent.com/open-contracting-extensions/ocds_enquiry_extension/v1.1.5/extension.json",
+     "https://raw.githubusercontent.com/open-contracting-extensions/ocds_coveredBy_extension/9b617f9c3a84f8eb727f273e1bb55a1c5bc7a925/extension.json"
+    ],
+    "publishedDate": "2026-08-19T02:22:08Z",
+    "releases": [
+     {
+      "ocid": "ocds-mnwr74-4ac08431-b5c3-4659-969c-da7b1a18f175",
+      "id": "000de2e8-3787-4a9d-9411-951f5405e945",
+      "date": "2026-08-19T02:22:08Z",
+      "initiationType": "tender",
+      "parties": [
+       {
+        "name": "Deutsche Bundesbank",
+        "id": "ORG-0001",
+        "identifier": {
+         "id": "991-80008-08",
+         "legalName": "Deutsche Bundesbank"
+        },
+        "address": {
+         "streetAddress": "Taunusanlage 5",
+         "locality": "Frankfurt am Main",
+         "region": "DE712",
+         "postalCode": "60329",
+         "countryName": "DEU"
+        },
+        "contactPoint": {
+         "name": "Zentralbereich Beschaffungen",
+         "email": "theocharis.nikoloudis@bundesbank.de",
+         "telephone": "000",
+         "url": "https://www.bundesbank.de"
+        },
+        "roles": [
+         "buyer"
+        ]
+       },
+       {
+        "name": "Vergabekammer des Bundes beim Bundeskartellamt",
+        "id": "ORG-0002",
+        "identifier": {
+         "id": "t:022894990",
+         "legalName": "Vergabekammer des Bundes beim Bundeskartellamt"
+        },
+        "address": {
+         "streetAddress": "Villemombler Straße 76",
+         "locality": "Bonn",
+         "region": "DEA22",
+         "postalCode": "53123",
+         "countryName": "DEU"
+        },
+        "contactPoint": {
+         "email": "vk@bundeskartellamt.bund.de",
+         "telephone": "+492289499-0"
+        },
+        "roles": [
+         "reviewBody"
+        ]
+       },
+       {
+        "name": "Caverion Deutschland GmbH",
+        "id": "ORG-0003",
+        "identifier": {
+         "id": "DE 815012867",
+         "legalName": "Caverion Deutschland GmbH"
+        },
+        "address": {
+         "locality": "Leipzig",
+         "region": "DED51",
+         "postalCode": "04356",
+         "countryName": "DEU"
+        },
+        "contactPoint": {
+         "email": "info.de@caverion.com",
+         "telephone": "000"
+        },
+        "roles": [
+         "tenderer",
+         "supplier"
+        ]
+       }
+      ],
+      "buyer": {
+       "name": "Deutsche Bundesbank",
+       "id": "991-80008-08",
+       "identifier": {
+        "id": "ORG-0000",
+        "legalName": "Deutsche Bundesbank"
+       },
+       "address": {
+        "streetAddress": "Taunusanlage 5",
+        "locality": "Frankfurt am Main",
+        "region": "DE712",
+        "postalCode": "60329",
+        "countryName": "DEU"
+       },
+       "contactPoint": {
+        "name": "Zentralbereich Beschaffungen",
+        "email": "theocharis.nikoloudis@bundesbank.de",
+        "telephone": "000",
+        "url": "https://www.bundesbank.de"
+       }
+      },
+      "tender": {
+       "id": "4ac08431-b5c3-4659-969c-da7b1a18f175",
+       "title": "2000086593 - Fil. Leipzig, Sanierung Ausbau/Technik/M7 - Erneuerung Lüftungsanlagen",
+       "description": "Im Projekt 34.0386 - Fil. Leipzig, Sanierung Ausbau/Technik/M7 wird das Gewerk „Erneuerung Lüftungsanlagen“ ausgeführt. Im Rahmen des Projektfortschrittes werden zusätzliche/geänderte Leistungen erforderlich, die zum Zeitpunkt der Beauftragung nicht ersichtlich waren.",
+       "procuringEntity": {
+        "name": "Deutsche Bundesbank",
+        "id": "991-80008-08"
+       },
+       "items": [
+        {
+         "id": "LOT-0000",
+         "deliveryAddress": {
+          "countryName": "DEU"
+         },
+         "relatedLot": "LOT-0000"
+        }
+       ],
+       "mainProcurementCategory": "works",
+       "numberOfTenderers": 1,
+       "tenderers": [
+        {
+         "name": "Caverion Deutschland GmbH",
+         "identifier": {
+          "id": "ORG-0002",
+          "legalName": "Caverion Deutschland GmbH"
+         },
+         "address": {
+          "locality": "Leipzig",
+          "region": "DED51",
+          "postalCode": "04356",
+          "countryName": "DEU"
+         },
+         "contactPoint": {
+          "email": "info.de@caverion.com",
+          "telephone": "000"
+         }
+        }
+       ],
+       "lots": [
+        {
+         "id": "LOT-0000",
+         "title": "2000086539 - Fil. Leipzig, Sanierung Ausbau/Technik/M7 - Erneuerung Lüftungsanlagen",
+         "description": "Im Projekt 34.0386 Fil. Leipzig, Sanierung Ausbau/Technik/M7 wird das Gewerk „Erneuerung Lüftungsanlagen“ ausgeführt. Im Rahmen des Projektfortschrittes werden zusätzliche/geänderte Leistungen erforderlich, die zum Zeitpunkt der Beauftragung nicht ersichtlich waren."
+        }
+       ]
+      },
+      "awards": [
+       {
+        "id": "LOT-0000",
+        "date": "2026-06-23T00:00:00+02:00",
+        "relatedLots": [
+         "LOT-0000"
+        ]
+       }
+      ],
+      "contracts": [
+       {
+        "id": "CON-0000",
+        "awardID": "CON-0000",
+        "value": {
+         "amount": 0,
+         "currency": "EUR"
+        },
+        "items": [
+         {
+          "id": "LOT-0000",
+          "relatedLot": "LOT-0000"
+         }
+        ],
+        "dateSigned": "2026-06-22T22:00:00.000Z"
+       }
+      ],
+      "language": "DEU"
+     }
+    ],
+    "publisher": {
+     "name": "Bekanntmachungsservice"
+    },
+    "license": "https://opendefinition.org/licenses/cc-zero/",
+    "publicationPolicy": "https://oeffentlichevergabe.de/ui/de/publicationPolicy"
+   }
+  },
+  {
+   "caso": "con contractPeriod (para Vertragsenden)",
+   "payload": {
+    "uri": "https://oeffentlichevergabe.de/api/notices/000a9a87-3ab4-41c8-90a9-c8b8c6601028?format=ocds&noticeVersion=01",
+    "version": "1.1",
+    "extensions": [
+     "https://raw.githubusercontent.com/open-contracting-extensions/ocds_lots_extension/bd6a5a0617abcdcf9da19db0e70a899e6b10c91c/extension.json",
+     "https://raw.githubusercontent.com/open-contracting-extensions/ocds_location_extension/v1.1.5/extension.json",
+     "https://raw.githubusercontent.com/open-contracting-extensions/ocds_enquiry_extension/v1.1.5/extension.json",
+     "https://raw.githubusercontent.com/open-contracting-extensions/ocds_coveredBy_extension/9b617f9c3a84f8eb727f273e1bb55a1c5bc7a925/extension.json"
+    ],
+    "publishedDate": "2026-08-04T02:24:16Z",
+    "releases": [
+     {
+      "ocid": "ocds-mnwr74-d6546603-be52-4af9-b20b-2418b4cb13f8",
+      "id": "000a9a87-3ab4-41c8-90a9-c8b8c6601028",
+      "date": "2026-08-04T02:24:16Z",
+      "tag": [
+       "award"
+      ],
+      "initiationType": "tender",
+      "parties": [
+       {
+        "name": "Studierendenwerk Mannheim",
+        "id": "ORG-0001",
+        "identifier": {
+         "id": "-",
+         "legalName": "Studierendenwerk Mannheim"
+        },
+        "address": {
+         "streetAddress": "L 7, 8",
+         "locality": "Mannheim",
+         "region": "DE126",
+         "postalCode": "68161",
+         "countryName": "DEU"
+        },
+        "contactPoint": {
+         "name": "Harald Nickel Rechtsanwälte Partnerschaftsgesellschaft",
+         "email": "nickel@nickel.de",
+         "telephone": "+49 (0)6181 30410-0",
+         "faxNumber": "+49 (0)6181 30410-10",
+         "url": "https://www.stw-ma.de/"
+        },
+        "roles": [
+         "buyer",
+         "processContactPoint"
+        ]
+       },
+       {
+        "name": "Vergabekammer Baden-Württemberg",
+        "id": "ORG-0002",
+        "identifier": {
+         "id": ".",
+         "legalName": "Vergabekammer Baden-Württemberg"
+        },
+        "address": {
+         "streetAddress": "Kapellenstraße 17",
+         "locality": "Karlsruhe",
+         "region": "DE122",
+         "postalCode": "7613",
+         "countryName": "DEU"
+        },
+        "contactPoint": {
+         "email": "vergabekammer@rpk.bwl.de",
+         "telephone": "+49 721 926-8730",
+         "faxNumber": "+49 721 926-3985",
+         "url": "https://rpk.baden-wuerttemberg.de/abt1/referat-15-vergabekammer/"
+        },
+        "roles": [
+         "reviewBody"
+        ]
+       },
+       {
+        "name": "-",
+        "id": "ORG-0003",
+        "identifier": {
+         "id": "-",
+         "legalName": "-"
+        },
+        "address": {
+         "locality": "-",
+         "region": "DE122",
+         "postalCode": "-",
+         "countryName": "DEU"
+        },
+        "roles": [
+         "reviewContactPoint"
+        ]
+       },
+       {
+        "name": "Goldbeck Südwest GmbH NL Rhein-Neckar",
+        "id": "ORG-0004",
+        "identifier": {
+         "id": "--",
+         "legalName": "Goldbeck Südwest GmbH NL Rhein-Neckar"
+        },
+        "address": {
+         "streetAddress": "Goldbeckstraße 7",
+         "locality": "Hirschberg",
+         "region": "DE128",
+         "postalCode": "69493",
+         "countryName": "DEU"
+        },
+        "contactPoint": {
+         "email": "christopher.conrads@goldbeck.de",
+         "telephone": "+49 620187775112",
+         "faxNumber": "+49 620187775180"
+        },
+        "roles": [
+         "tenderer",
+         "supplier"
+        ]
+       }
+      ],
+      "buyer": {
+       "name": "Studierendenwerk Mannheim",
+       "id": "-",
+       "identifier": {
+        "id": "ORG-7001",
+        "legalName": "Studierendenwerk Mannheim"
+       },
+       "address": {
+        "streetAddress": "L 7, 8",
+        "locality": "Mannheim",
+        "region": "DE126",
+        "postalCode": "68161",
+        "countryName": "DEU"
+       },
+       "contactPoint": {
+        "name": "Harald Nickel Rechtsanwälte Partnerschaftsgesellschaft",
+        "email": "nickel@nickel.de",
+        "telephone": "+49 (0)6181 30410-0",
+        "faxNumber": "+49 (0)6181 30410-10",
+        "url": "https://www.stw-ma.de/"
+       }
+      },
+      "tender": {
+       "id": "d6546603-be52-4af9-b20b-2418b4cb13f8",
+       "title": "Mannheim - Planung u. Errichtung einer Wohnungsanlage für Studierenden in der Gaußstraße 18",
+       "description": "Auf dem Grundstück der Gaußstraße 18, 68165 Mannheim soll durch einen Auftragnehmer eine sechsgeschossige Wohnungsanalge für Studierende, beinhaltend zumindest 167 Studierenden-Wohnungen geplant und schlüsselfertig errichtet werden.",
+       "procuringEntity": {
+        "name": "Studierendenwerk Mannheim",
+        "id": "-"
+       },
+       "items": [
+        {
+         "id": "LOT-0000",
+         "classification": {
+          "scheme": "CPV",
+          "id": "45214700",
+          "description": "Construction work for halls of residence"
+         },
+         "deliveryAddress": {
+          "streetAddress": "Gaußstraße 18",
+          "locality": "Mannheim",
+          "region": "DE126",
+          "postalCode": "68165",
+          "countryName": "DEU"
+         },
+         "relatedLot": "LOT-0000"
+        }
+       ],
+       "procurementMethodDetails": "Negotiated with prior publication of a call for competition / competitive with negotiation",
+       "procurementMethodRationale": "Aufgrund von Förderung u.a. soll möglichst zeitnah mit der Ausführung gestartet werden, die Zustimmung der Bieter für die verkürzte Angebotsfrist wurde eingeholt.",
+       "mainProcurementCategory": "works",
+       "numberOfTenderers": 1,
+       "tenderers": [
+        {
+         "name": "Goldbeck Südwest GmbH NL Rhein-Neckar",
+         "identifier": {
+          "id": "ORG-0001",
+          "legalName": "Goldbeck Südwest GmbH NL Rhein-Neckar"
+         },
+         "address": {
+          "streetAddress": "Goldbeckstraße 7",
+          "locality": "Hirschberg",
+          "region": "DE128",
+          "postalCode": "69493",
+          "countryName": "DEU"
+         },
+         "contactPoint": {
+          "email": "christopher.conrads@goldbeck.de",
+          "telephone": "+49 620187775112",
+          "faxNumber": "+49 620187775180"
+         }
+        }
+       ],
+       "lots": [
+        {
+         "id": "LOT-0000",
+         "title": "Mannheim - Planung u. Errichtung einer Wohnungsanlage für Studierenden in der Gaußstraße 18",
+         "description": "Planung und Errichtung einer sechsgeschossigen Wohnungsanlage für Studierende mit zumindest 167 Studierenden-Wohnungen.",
+         "contractPeriod": {
+          "startDate": "2026-06-22T00:00:00+02:00",
+          "endDate": "2027-12-31T00:00:00+01:00"
+         }
+        }
+       ]
+      },
+      "awards": [
+       {
+        "id": "LOT-0000",
+        "status": "active",
+        "date": "2026-07-03T00:00:00+02:00",
+        "relatedLots": [
+         "LOT-0000"
+        ]
+       }
+      ],
+      "contracts": [
+       {
+        "id": "CON-0001",
+        "awardID": "CON-0001",
+        "status": "active",
+        "items": [
+         {
+          "id": "LOT-0000",
+          "relatedLot": "LOT-0000"
+         }
+        ],
+        "dateSigned": "2026-07-02T22:00:00.000Z"
+       }
+      ],
+      "language": "DEU"
+     }
+    ],
+    "publisher": {
+     "name": "Bekanntmachungsservice"
+    },
+    "license": "https://opendefinition.org/licenses/cc-zero/",
+    "publicationPolicy": "https://oeffentlichevergabe.de/ui/de/publicationPolicy"
+   }
+  },
+  {
+   "caso": "moneda que no es EUR",
+   "payload": {
+    "uri": "https://oeffentlichevergabe.de/api/notices/023e960d-745b-40f5-926d-8a13d0b3de9e?format=ocds&noticeVersion=01",
+    "version": "1.1",
+    "extensions": [
+     "https://raw.githubusercontent.com/open-contracting-extensions/ocds_lots_extension/bd6a5a0617abcdcf9da19db0e70a899e6b10c91c/extension.json",
+     "https://raw.githubusercontent.com/open-contracting-extensions/ocds_location_extension/v1.1.5/extension.json",
+     "https://raw.githubusercontent.com/open-contracting-extensions/ocds_enquiry_extension/v1.1.5/extension.json",
+     "https://raw.githubusercontent.com/open-contracting-extensions/ocds_coveredBy_extension/9b617f9c3a84f8eb727f273e1bb55a1c5bc7a925/extension.json"
+    ],
+    "publishedDate": "2026-08-06T02:20:21Z",
+    "releases": [
+     {
+      "ocid": "ocds-mnwr74-f913aadd-de60-40e8-ba58-30d09779af87",
+      "id": "023e960d-745b-40f5-926d-8a13d0b3de9e",
+      "date": "2026-08-06T02:20:21Z",
+      "tag": [
+       "tender"
+      ],
+      "initiationType": "tender",
+      "parties": [
+       {
+        "name": "Deutsche Welthungerhilfe e. V",
+        "id": "ORG-0001",
+        "identifier": {
+         "id": "Deutsche Welthungerhilfe e. V",
+         "legalName": "Deutsche Welthungerhilfe e. V"
+        },
+        "address": {
+         "streetAddress": " FRIEDRICH-EBERT-STR. 1",
+         "locality": "Bonn",
+         "region": "DE117",
+         "postalCode": "53173",
+         "countryName": "DEU"
+        },
+        "contactPoint": {
+         "name": "TENDAI GWATA",
+         "email": "TENDAI.GWATA@welthungerhilfe.de",
+         "telephone": "+49 2282288432",
+         "url": "https://www.welthungerhilfe.de"
+        },
+        "roles": [
+         "buyer",
+         "leadBuyer",
+         "procuringEntity",
+         "evaluationBody",
+         "submissionReceiptBody"
+        ]
+       },
+       {
+        "name": "Deutsche Welthungerhilfe e. V. - Legal & Compliance",
+        "id": "ORG-0002",
+        "identifier": {
+         "id": "Welthungerhilfe Zimbabwe",
+         "legalName": "Deutsche Welthungerhilfe e. V. - Legal & Compliance"
+        },
+        "address": {
+         "streetAddress": "Friedrich-Ebert-Strasse 1",
+         "locality": "Bonn",
+         "region": "DEA22",
+         "postalCode": "53173",
+         "countryName": "DEU"
+        },
+        "contactPoint": {
+         "name": "Legal and Compliance",
+         "email": "complaints@welthungerhilfe.de",
+         "telephone": "+49 22822880",
+         "url": "http://www.welthungerhilfe.de"
+        },
+        "roles": [
+         "mediationBody",
+         "reviewContactPoint",
+         "reviewBody"
+        ]
+       },
+       {
+        "name": "Deutsche Welthungerhilfe e. V. - Legal & Compliance",
+        "id": "ORG-0003",
+        "identifier": {
+         "id": "Welthungerhilfe e. V.",
+         "legalName": "Deutsche Welthungerhilfe e. V. - Legal & Compliance"
+        },
+        "address": {
+         "streetAddress": "Friedrich-Ebert-Strasse 1",
+         "locality": "Bonn",
+         "region": "DEA22",
+         "postalCode": "53173",
+         "countryName": "DEU"
+        },
+        "contactPoint": {
+         "name": "Deutsche Welthungerhilfe e. V.",
+         "email": "complaints@welthungerhilfe.de",
+         "telephone": "+49 22822880",
+         "url": "http://www.welthungerhilfe.de"
+        },
+        "roles": [
+         "buyer"
+        ]
+       }
+      ],
+      "buyer": {
+       "name": "Deutsche Welthungerhilfe e. V",
+       "id": "Deutsche Welthungerhilfe e. V",
+       "identifier": {
+        "id": "ORG-0001",
+        "legalName": "Deutsche Welthungerhilfe e. V"
+       },
+       "address": {
+        "streetAddress": " FRIEDRICH-EBERT-STR. 1",
+        "locality": "Bonn",
+        "region": "DE117",
+        "postalCode": "53173",
+        "countryName": "DEU"
+       },
+       "contactPoint": {
+        "name": "TENDAI GWATA",
+        "email": "TENDAI.GWATA@welthungerhilfe.de",
+        "telephone": "+49 2282288432",
+        "url": "https://www.welthungerhilfe.de"
+       }
+      },
+      "tender": {
+       "id": "f913aadd-de60-40e8-ba58-30d09779af87",
+       "title": "SUPPY OF VEHICLES",
+       "description": "Deutsche Welthungerhilfe e. V. is one of the largest non-profit, non-partisan and non-denominational organizations in the field of worldwide development cooperation and humanitarian assistance. We finance our work in Africa, Asia and Latin America with donations from the population at large. We also receive funds from various institutional donors such as the German Federal Government, the European Union, the United Nations and others.",
+       "procuringEntity": {
+        "name": "Deutsche Welthungerhilfe e. V",
+        "id": "Deutsche Welthungerhilfe e. V"
+       },
+       "items": [
+        {
+         "id": "LOT-0000",
+         "classification": {
+          "scheme": "CPV",
+          "id": "34100000",
+          "description": "Motor vehicles"
+         },
+         "additionalClassifications": [
+          {
+           "scheme": "CPV",
+           "id": "34110000",
+           "description": "Passenger cars"
+          },
+          {
+           "scheme": "CPV",
+           "id": "34120000",
+           "description": "Motor vehicles for the transport of 10 or more persons"
+          }
+         ],
+         "quantity": 4,
+         "unit": {
+          "scheme": "UNCEFACT",
+          "id": "H87"
+         },
+         "deliveryAddress": {
+          "countryName": "ZWE"
+         },
+         "relatedLot": "LOT-0000"
+        }
+       ],
+       "value": {
+        "amount": 200000,
+        "currency": "USN"
+       },
+       "procurementMethodDetails": "Negotiated with prior publication of a call for competition / competitive with negotiation",
+       "mainProcurementCategory": "goods",
+       "numberOfTenderers": 0,
+       "documents": [
+        {
+         "id": "DOC-0001",
+         "url": "https://eu.eu-supply.com/app/rfq/rwlentrance_s.asp?PID=459392&TID=200419875&B=",
+         "language": "ENG",
+         "relatedLots": [
+          "LOT-0000"
+         ]
+        }
+       ],
+       "lots": [
+        {
+         "coveredBy": [
+          "EU-CVD"
+         ],
+         "id": "LOT-0000",
+         "title": "SUPPY OF VEHICLES",
+         "description": "Deutsche Welthungerhilfe e. V. is one of the largest non-profit, non-partisan and non-denominational organizations in the field of worldwide development cooperation and humanitarian assistance. We finance our work in Africa, Asia and Latin America with donations from the population at large. We also receive funds from various institutional donors such as the German Federal Government, the European Union, the United Nations and others.",
+         "contractPeriod": {
+          "durationInDays": 120
+         },
+         "additionalClassifications": [
+          {
+           "scheme": "eu-cvd-contract-type",
+           "id": "veh-acq",
+           "description": "Vehicle purchase, lease or rent"
+          }
+         ]
+        }
+       ]
+      },
+      "language": "ENG"
+     }
+    ],
+    "publisher": {
+     "name": "Bekanntmachungsservice"
+    },
+    "license": "https://opendefinition.org/licenses/cc-zero/",
+    "publicationPolicy": "https://oeffentlichevergabe.de/ui/de/publicationPolicy"
+   }
+  },
+  {
+   "caso": "region solo del comprador, no del item",
+   "payload": {
+    "uri": "https://oeffentlichevergabe.de/api/notices/00477577-8fb1-49b6-b1e7-a85437b13f27?format=ocds&noticeVersion=01",
+    "version": "1.1",
+    "extensions": [
+     "https://raw.githubusercontent.com/open-contracting-extensions/ocds_lots_extension/bd6a5a0617abcdcf9da19db0e70a899e6b10c91c/extension.json",
+     "https://raw.githubusercontent.com/open-contracting-extensions/ocds_location_extension/v1.1.5/extension.json",
+     "https://raw.githubusercontent.com/open-contracting-extensions/ocds_enquiry_extension/v1.1.5/extension.json",
+     "https://raw.githubusercontent.com/open-contracting-extensions/ocds_coveredBy_extension/9b617f9c3a84f8eb727f273e1bb55a1c5bc7a925/extension.json"
+    ],
+    "publishedDate": "2026-08-07T02:06:33Z",
+    "releases": [
+     {
+      "ocid": "ocds-mnwr74-74896566-9e91-4d56-88db-0b748410361b",
+      "id": "00477577-8fb1-49b6-b1e7-a85437b13f27",
+      "date": "2026-08-07T02:06:33Z",
+      "tag": [
+       "award"
+      ],
+      "initiationType": "tender",
+      "parties": [
+       {
+        "name": "BITMARCK GmbH",
+        "id": "ORG-0001",
+        "identifier": {
+         "id": "HRB 20680",
+         "legalName": "BITMARCK GmbH"
+        },
+        "address": {
+         "streetAddress": "Kruppstraße 64",
+         "locality": "Essen",
+         "region": "DEA13",
+         "postalCode": "45145",
+         "countryName": "DEU"
+        },
+        "contactPoint": {
+         "name": "Bird & Bird LLP",
+         "email": "Team.BITMARCK@twobirds.com",
+         "telephone": "+49 211 2005 6237",
+         "faxNumber": "+49 211 2005 6011",
+         "url": "https://www.bitmarck.de"
+        },
+        "roles": [
+         "buyer",
+         "processContactPoint"
+        ]
+       },
+       {
+        "name": "Vergabekammern des Bundes beim Bundeskartellamt",
+        "id": "ORG-0002",
+        "identifier": {
+         "id": "t:+49 2289499-0",
+         "legalName": "Vergabekammern des Bundes beim Bundeskartellamt"
+        },
+        "address": {
+         "streetAddress": "Kaiser-Friedrich-Str. 16",
+         "locality": "Bonn",
+         "region": "DEA22",
+         "postalCode": "53113",
+         "countryName": "DEU"
+        },
+        "contactPoint": {
+         "name": "Vergabekammer",
+         "email": "vk@bundeskartellamt.bund.de",
+         "telephone": "+49 2289499-0",
+         "faxNumber": "+49 2289499-163",
+         "url": "https://www.bundeskartellamt.de"
+        },
+        "roles": [
+         "reviewContactPoint"
+        ]
+       },
+       {
+        "name": "Vergabekammern des Bundes beim Bundeskartellamt",
+        "id": "ORG-0003",
+        "identifier": {
+         "id": "t:+49 2289499-0",
+         "legalName": "Vergabekammern des Bundes beim Bundeskartellamt"
+        },
+        "address": {
+         "streetAddress": "Kaiser-Friedrich-Straße 16",
+         "locality": "Bonn",
+         "region": "DEA22",
+         "postalCode": "53113",
+         "countryName": "DEU"
+        },
+        "contactPoint": {
+         "email": "vk@bundeskartellamt.bund.de",
+         "telephone": "+49 2289499-0",
+         "faxNumber": "+49 2289499-163",
+         "url": "https://www.bundeskartellamt.de"
+        },
+        "roles": [
+         "reviewBody"
+        ]
+       },
+       {
+        "name": "Bechtle GmbH",
+        "id": "ORG-0004",
+        "identifier": {
+         "id": "Hamburg 84055",
+         "legalName": "Bechtle GmbH"
+        },
+        "address": {
+         "streetAddress": "Bernhard-Nocht-Str. 113",
+         "locality": "Hamburg",
+         "region": "DE600",
+         "postalCode": "20359",
+         "countryName": "DEU"
+        },
+        "contactPoint": {
+         "email": "gb-oea.hamburg@bechtle.com",
+         "telephone": "040239986446",
+         "faxNumber": "040239986100",
+         "url": "http://www.bechtle.com"
+        },
+        "roles": [
+         "tenderer",
+         "supplier"
+        ]
+       }
+      ],
+      "buyer": {
+       "name": "BITMARCK GmbH",
+       "id": "HRB 20680",
+       "identifier": {
+        "id": "ORG-0001",
+        "legalName": "BITMARCK GmbH"
+       },
+       "address": {
+        "streetAddress": "Kruppstraße 64",
+        "locality": "Essen",
+        "region": "DEA13",
+        "postalCode": "45145",
+        "countryName": "DEU"
+       },
+       "contactPoint": {
+        "name": "Bird & Bird LLP",
+        "email": "Team.BITMARCK@twobirds.com",
+        "telephone": "+49 211 2005 6237",
+        "faxNumber": "+49 211 2005 6011",
+        "url": "https://www.bitmarck.de"
+       }
+      },
+      "tender": {
+       "id": "74896566-9e91-4d56-88db-0b748410361b",
+       "title": "Palo Alto Fachhandelspartner (FHP)-Ausschreibung",
+       "description": "Beschafft wird eine EVB-IT Rahmenvereinbarung mit einem Auftragnehmer. Vertragsgegenstand sind Artikel des Palo Alto Enterprise Program for attached Subscriptions (\"ELA\"), des Palo Alto Program for Hardware Support (\"ESA\") Partner Services des Auftragnehmers, Hersteller Services der Palo Alto sowie sonstige abrufbare Palo Alto-Produkte/Leistungen des Herstellers Palo Alto Networks, Inc.",
+       "procuringEntity": {
+        "name": "BITMARCK GmbH",
+        "id": "HRB 20680"
+       },
+       "items": [
+        {
+         "id": "LOT-0001",
+         "classification": {
+          "scheme": "CPV",
+          "id": "72260000",
+          "description": "Software-related services"
+         },
+         "additionalClassifications": [
+          {
+           "scheme": "CPV",
+           "id": "50312000",
+           "description": "Maintenance and repair of computer equipment"
+          },
+          {
+           "scheme": "CPV",
+           "id": "72253000",
+           "description": "Helpdesk and support services"
+          },
+          {
+           "scheme": "CPV",
+           "id": "72268000",
+           "description": "Software supply services"
+          },
+          {
+           "scheme": "CPV",
+           "id": "72590000",
+           "description": "Computer-related professional services"
+          }
+         ],
+         "deliveryLocation": {
+          "description": "Der Erfüllungsort richtet sich nach dem Vertragswerk."
+         },
+         "relatedLot": "LOT-0001"
+        }
+       ],
+       "value": {
+        "amount": 9900000.0,
+        "currency": "EUR"
+       },
+       "procurementMethod": "open",
+       "procurementMethodDetails": "Open",
+       "procurementMethodRationale": "Der Beschaffungszweck des gegenständlichen Vergabeverfahrens besteht darin, die für das Jahr 2026 maßgeblichen Konditionen für die im Einzelabruf vorgesehenen ELA- und ESA-Leistungen  für die gesamte Vertragslaufzeit festzuschreiben. Eine Zuschlagserteilung und/oder initialer Abruf erst nach dem 28.07.2026 würde den Beschaffungszweck vereiteln.",
+       "mainProcurementCategory": "services",
+       "numberOfTenderers": 1,
+       "tenderers": [
+        {
+         "name": "Bechtle GmbH",
+         "identifier": {
+          "id": "ORG-0004",
+          "legalName": "Bechtle GmbH"
+         },
+         "address": {
+          "streetAddress": "Bernhard-Nocht-Str. 113",
+          "locality": "Hamburg",
+          "region": "DE600",
+          "postalCode": "20359",
+          "countryName": "DEU"
+         },
+         "contactPoint": {
+          "email": "gb-oea.hamburg@bechtle.com",
+          "telephone": "040239986446",
+          "faxNumber": "040239986100",
+          "url": "http://www.bechtle.com"
+         }
+        }
+       ],
+       "lots": [
+        {
+         "id": "LOT-0001",
+         "title": "Palo Alto Fachhandelspartner (FHP)-Ausschreibung",
+         "description": "Beschafft wird eine EVB-IT Rahmenvereinbarung mit einem Auftragnehmer. Vertragsgegenstand sind Artikel des Palo Alto Enterprise Program for attached Subscriptions (\"ELA\"), des Palo Alto Program for Hardware Support (\"ESA\") Partner Services des Auftragnehmers, Hersteller Services der Palo Alto sowie sonstige abrufbare Palo Alto-Produkte/Leistungen des Herstellers Palo Alto Networks, Inc.",
+         "contractPeriod": {
+          "durationInDays": 1080
+         }
+        }
+       ]
+      },
+      "awards": [
+       {
+        "id": "LOT-0001",
+        "title": "Bechtle GmbH, 20359 Hamburg",
+        "status": "active",
+        "date": "2026-07-27T00:00:00+02:00",
+        "relatedLots": [
+         "LOT-0001"
+        ]
+       }
+      ],
+      "contracts": [
+       {
+        "id": "CON-0001",
+        "awardID": "CON-0001",
+        "title": "Bechtle GmbH, 20359 Hamburg",
+        "status": "active",
+        "items": [
+         {
+          "id": "LOT-0001",
+          "relatedLot": "LOT-0001"
+         }
+        ],
+        "dateSigned": "2026-07-26T22:00:00.000Z"
+       }
+      ],
+      "language": "DEU"
+     }
+    ],
+    "publisher": {
+     "name": "Bekanntmachungsservice"
+    },
+    "license": "https://opendefinition.org/licenses/cc-zero/",
+    "publicationPolicy": "https://oeffentlichevergabe.de/ui/de/publicationPolicy"
+   }
+  }
+ ]
+}

@@ -1,0 +1,1000 @@
+/* Ausschreibungsradar — hoja de estilo única, sin compilar y sin dependencias.
+ *
+ * Está escrita para vivir dentro de la ventana de la app de macOS, donde no hay barra
+ * de direcciones ni pestañas de navegador alrededor: lo que se vea aquí es todo lo que
+ * hay, así que el cromo tiene que parecer cromo de aplicación y no de página web. Sigue
+ * funcionando igual abierta en un navegador.
+ *
+ * Dos reglas de la casa que conviene no romper:
+ *
+ *   - Los nombres de clase son una API. `app.js` los genera por `innerHTML` en las
+ *     tarjetas, las píldoras y los catorce bloques de la Analítica, así que renombrar
+ *     una clase aquí y no allí no da error: deja de aplicar en silencio.
+ *   - Toda cifra va en texto al lado de su barra. Las barras son `div` y no SVG a
+ *     propósito (ver «Analítica» al final del fichero).
+ */
+
+/* --- Tokens ---------------------------------------------------------------
+ *
+ * Oscuro primero, que es como nació el proyecto, y el tema claro redefine solo lo que
+ * cambia. La diferencia con antes es que el claro ahora también redefine los cuatro
+ * colores de estado: heredaba del oscuro el acento, el verde, el ámbar y el rojo, y
+ * sobre fondo blanco los cuatro se quedaban flojos de contraste.
+ */
+:root {
+  /* Que las barras de scroll, los `progress` y las casillas nativas salgan en el tema
+     que toca. Dentro de un WKWebView sin cromo alrededor, una barra de scroll clara
+     sobre fondo oscuro es lo que delata que esto es una página. */
+  color-scheme: light dark;
+
+  --fondo: #0d0f14;
+  --panel: #14181f;
+  --panel-2: #1b2029;
+  --borde: #262c38;
+  /* Para lo que tiene que separarse de verdad: cabecera, pie, cantos de la ficha. */
+  --borde-fuerte: #333b4a;
+  --texto: #e8eaef;
+  --texto-sec: #9aa3b2;
+  /* Tercer nivel, para lo descriptivo que no se lee sino que se reconoce: la fuente de
+     datos, el procedimiento, la comunidad. Antes competían con el importe y el plazo. */
+  --texto-ter: #6f7889;
+  --acento: #5b93ff;
+  --acento-tenue: rgba(91, 147, 255, .14);
+  --acento-borde: rgba(91, 147, 255, .42);
+  --verde: #3ecf7f;
+  --verde-tenue: rgba(62, 207, 127, .13);
+  --ambar: #e8ae3c;
+  --ambar-tenue: rgba(232, 174, 60, .13);
+  --rojo: #ef5f56;
+  --rojo-tenue: rgba(239, 95, 86, .13);
+
+  /* Escala tipográfica. Antes había doce tamaños sueltos entre 10 y 26 px, elegidos uno
+     a uno; estos siete cubren lo mismo y hacen que dos cosas del mismo rango se vean
+     del mismo tamaño sin tener que acordarse. */
+  --txt-xs: 11px;
+  --txt-sm: 12px;
+  --txt-md: 13px;
+  --txt-base: 15px;
+  --txt-lg: 17px;
+  --txt-xl: 21px;
+  --txt-2xl: 28px;
+
+  /* Espaciado. Todo múltiplo de 4 para que los bordes caigan en la misma rejilla. */
+  --e-1: 4px;
+  --e-2: 8px;
+  --e-3: 12px;
+  --e-4: 16px;
+  --e-5: 24px;
+  --e-6: 32px;
+
+  /* Radios. `--radio` se queda con su nombre y su valor: está escrito en medio fichero
+     y en algún sitio de `app.js`. Los otros dos son los que faltaban. */
+  --radio-sm: 6px;
+  --radio: 10px;
+  --radio-lg: 14px;
+  --radio-pill: 999px;
+
+  /* Dos niveles de elevación y ninguno más. El primero para lo que descansa sobre el
+     fondo, el segundo para lo que se pone por encima de todo. */
+  --sombra-1: 0 1px 2px rgba(0, 0, 0, .28);
+  --sombra-2: 0 16px 48px rgba(0, 0, 0, .46);
+
+  --transicion: 120ms ease;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --fondo: #f6f7f9;
+    --panel: #ffffff;
+    --panel-2: #f1f3f6;
+    --borde: #e3e7ed;
+    --borde-fuerte: #cbd2dc;
+    --texto: #171a20;
+    --texto-sec: #5b6371;
+    --texto-ter: #868e9c;
+    /* Los cuatro de estado, oscurecidos. El #4f8cff de antes sobre blanco daba 3,0:1 y
+       el texto de una píldora azul no se leía; estos pasan de 4,5:1. */
+    --acento: #2563eb;
+    --acento-tenue: rgba(37, 99, 235, .09);
+    --acento-borde: rgba(37, 99, 235, .34);
+    --verde: #15803d;
+    --verde-tenue: rgba(21, 128, 61, .10);
+    --ambar: #a35a08;
+    --ambar-tenue: rgba(163, 90, 8, .10);
+    --rojo: #d32f2b;
+    --rojo-tenue: rgba(211, 47, 43, .10);
+    --sombra-1: 0 1px 2px rgba(16, 24, 40, .06);
+    --sombra-2: 0 16px 48px rgba(16, 24, 40, .18);
+  }
+}
+
+* { box-sizing: border-box; }
+
+/* Las reglas del autor ganan siempre sobre el `[hidden] { display: none }` del
+   navegador, así que cualquier clase que fije `display` deja el atributo `hidden`
+   sin efecto. Pasó con el botón «Cargar más»: `.mas { display: block }` lo mantenía
+   visible después de haber cargado todo, y al pulsarlo se pedían filas más allá del
+   final y no ocurría nada. Esta regla lo arregla para todos los elementos que se
+   ocultan con el atributo, no solo para ese botón. */
+[hidden] { display: none !important; }
+
+body {
+  margin: 0;
+  padding: 0 var(--e-5) 60px;
+  background: var(--fondo);
+  color: var(--texto);
+  font: var(--txt-base)/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  /* Sin navegador alrededor, el rebote elástico de macOS deja ver el fondo de la
+     ventana por debajo de la página y se lee como si algo se hubiera despegado. */
+  overscroll-behavior: none;
+}
+
+/* El cromo no se selecciona. En una app, arrastrar el ratón sobre una pestaña y verla
+   quedarse azul de selección es de las cosas que más delatan que dentro hay una web.
+   El contenido —objetos de pliegos, nombres de órgano, notas— sí, que para eso está. */
+.cabecera,
+.vistas,
+.filtros,
+.kpis,
+.ventanas,
+.pill,
+.tab,
+.boton-pri,
+.boton-sec,
+.kpi,
+.ventana {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* Foco visible en TODO lo que se puede enfocar, no solo en los campos de texto. Antes
+   solo `input` y `select` lo tenían; en una ventana sin barra de direcciones el teclado
+   es la única navegación alternativa que queda. */
+:focus-visible {
+  outline: 2px solid var(--acento);
+  outline-offset: 2px;
+  border-radius: var(--radio-sm);
+}
+
+/* --- Cabecera -------------------------------------------------------------- */
+
+.cabecera {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--e-5);
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: var(--e-5) 0 var(--e-4);
+  border-bottom: 1px solid var(--borde-fuerte);
+}
+
+h1 {
+  margin: 0;
+  font-size: var(--txt-xl);
+  font-weight: 650;
+  letter-spacing: -0.02em;
+}
+.sub { margin: var(--e-1) 0 0; color: var(--texto-sec); font-size: var(--txt-md); }
+
+.busqueda-ahora {
+  display: flex;
+  align-items: center;
+  gap: var(--e-3);
+  margin-top: var(--e-3);
+  flex-wrap: wrap;
+}
+.pista { font-size: var(--txt-sm); color: var(--texto-sec); }
+
+/* --- Botones --------------------------------------------------------------- */
+
+.boton-pri,
+.boton-sec {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border-radius: var(--radio-sm);
+  padding: 7px var(--e-3);
+  font: inherit;
+  font-size: var(--txt-md);
+  cursor: pointer;
+  transition: background var(--transicion), border-color var(--transicion),
+              color var(--transicion);
+  white-space: nowrap;
+}
+
+.boton-pri {
+  background: var(--acento);
+  border: 1px solid var(--acento);
+  font-weight: 600;
+  color: #fff;
+}
+.boton-pri:hover { filter: brightness(1.08); }
+.boton-pri:active { filter: brightness(.94); }
+.boton-pri:disabled { opacity: .55; cursor: default; filter: none; }
+
+.boton-sec {
+  background: var(--panel);
+  border: 1px solid var(--borde);
+  color: var(--texto);
+  text-decoration: none;
+  box-shadow: var(--sombra-1);
+}
+.boton-sec:hover { border-color: var(--borde-fuerte); background: var(--panel-2); }
+.boton-sec:active { background: var(--panel-2); filter: brightness(.97); }
+.mas { display: block; margin: var(--e-5) auto; }
+
+/* --- Iconos ---------------------------------------------------------------- */
+
+/* Se dibujan una sola vez en el sprite `<symbol>` de `index.html` y se usan con
+   `<use>`. Sin build step es la única manera de no repetir el path en cada una de las
+   cien tarjetas de la lista, y además `<use>` es un elemento que `app.js` puede generar
+   sin saltarse la regla de no meter texto de los pliegos en `innerHTML`.
+   `currentColor` hace que los dos temas salgan gratis. */
+.ico {
+  width: 1em;
+  height: 1em;
+  flex: none;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  /* Los iconos acompañan texto: alinearlos por la línea base y no por la caja evita el
+     medio píxel de descuadre que se nota en una fila de píldoras. */
+  vertical-align: -0.125em;
+}
+.ico-relleno { fill: currentColor; stroke: none; }
+
+/* --- Contadores de la cabecera --------------------------------------------- */
+
+.kpis { display: flex; gap: var(--e-2); flex-wrap: wrap; }
+.kpi {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  background: var(--panel);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+  padding: var(--e-2) var(--e-3);
+  min-width: 104px;
+  text-align: left;
+  font: inherit;
+  color: inherit;
+  box-shadow: var(--sombra-1);
+  transition: border-color var(--transicion), background var(--transicion);
+}
+button.kpi { cursor: pointer; }
+button.kpi:hover { border-color: var(--borde-fuerte); }
+/* El activo, relleno y con el canto marcado. El `inset` de 1 px de antes, sobre un
+   borde que ya era de 1 px, era literalmente imperceptible al lado del inactivo. */
+button.kpi.activo {
+  border-color: var(--acento);
+  background: var(--acento-tenue);
+}
+.kpi .n {
+  font-size: var(--txt-xl);
+  font-weight: 650;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+.kpi .t {
+  font-size: var(--txt-xs);
+  color: var(--texto-sec);
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  font-weight: 500;
+}
+.kpi.urgente .n { color: var(--ambar); }
+button.kpi.activo .t { color: var(--acento); }
+
+/* --- Selectores de ventana (Vencimientos y Analítica) ---------------------- */
+
+.ventanas { display: flex; gap: var(--e-2); flex-wrap: wrap; margin: var(--e-1) 0 var(--e-3); }
+.ventana {
+  background: var(--panel);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+  padding: var(--e-2) var(--e-3);
+  cursor: pointer;
+  font: inherit;
+  color: var(--texto);
+  text-align: left;
+  min-width: 118px;
+  box-shadow: var(--sombra-1);
+  transition: border-color var(--transicion), background var(--transicion);
+}
+.ventana:hover { border-color: var(--borde-fuerte); }
+.ventana.activa { border-color: var(--acento); background: var(--acento-tenue); }
+.ventana .n {
+  font-size: var(--txt-lg);
+  font-weight: 650;
+  font-variant-numeric: tabular-nums;
+}
+.ventana .t {
+  font-size: var(--txt-xs);
+  color: var(--texto-sec);
+  text-transform: uppercase;
+  letter-spacing: .05em;
+}
+.ventana .imp {
+  font-size: var(--txt-xs);
+  color: var(--texto-ter);
+  font-variant-numeric: tabular-nums;
+}
+
+.total-ventana { margin: 0 0 var(--e-3); font-size: var(--txt-base); }
+.total-ventana strong { font-size: var(--txt-lg); font-weight: 650; }
+
+.filtros-activos { margin: calc(var(--e-1) * -1) 0 var(--e-3); font-size: var(--txt-sm); color: var(--texto-sec); }
+.filtros-activos .quitar {
+  background: none; border: 0; color: var(--acento); cursor: pointer;
+  font: inherit; font-size: var(--txt-sm); padding: 0 0 0 var(--e-2); text-decoration: underline;
+}
+
+/* --- Avisos ---------------------------------------------------------------- */
+
+.avisos {
+  margin: var(--e-3) 0 0;
+  padding: var(--e-3) var(--e-4);
+  border-radius: var(--radio);
+  background: var(--rojo-tenue);
+  border: 1px solid var(--rojo);
+  border-left-width: 3px;
+  font-size: var(--txt-md);
+}
+/* Cada aviso lleva su «x», así que el ancla del botón es el párrafo y no la caja: con
+   `position: relative` en `.avisos` los tres botones se apilarían en la misma esquina.
+   El aspecto se hereda de `.cerrar`, que ya existe para el panel lateral. */
+.avisos p { margin: 3px 0; position: relative; padding-right: 26px; }
+.avisos .cerrar { top: -3px; right: 0; font-size: 20px; }
+.avisos .cerrar:hover { color: var(--texto); }
+
+/* Cobertura: gris y no rojo, a propósito. No ha pasado nada malo —es la misma decisión
+   que documenta `.carga`—: son los límites de la herramienta, y saberlos es parte de
+   usarla bien. Toma prestado el aspecto de `.consejos`. */
+.cobertura {
+  margin: var(--e-3) 0 0;
+  padding: var(--e-2) var(--e-4);
+  background: var(--panel-2);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+  font-size: var(--txt-sm);
+  color: var(--texto-sec);
+}
+.cobertura summary { cursor: pointer; list-style: none; -webkit-user-select: none; user-select: none; }
+.cobertura summary::-webkit-details-marker { display: none; }
+/* El triángulo se dibuja aquí para que gire al abrir sin depender del que trae cada
+   navegador, que en Safari y en Firefox no se parecen. */
+.cobertura summary::before {
+  content: '▸';
+  display: inline-block;
+  width: 1em;
+  transition: transform .15s;
+}
+.cobertura[open] summary::before { transform: rotate(90deg); }
+.cobertura summary:hover { color: var(--texto); }
+.cobertura ul { margin: var(--e-2) 0 var(--e-1); padding-left: 1.9em; }
+.cobertura li { margin-bottom: 5px; line-height: 1.45; }
+.cobertura b { color: var(--texto); font-weight: 600; }
+@media (prefers-reduced-motion: reduce) {
+  .cobertura summary::before { transition: none; }
+}
+
+/* Ampliar el archivo. Separado de la lista por una línea porque deja de ser una
+   advertencia y pasa a ser algo que se puede hacer: el borde marca ese cambio. */
+.historico {
+  margin-top: var(--e-3);
+  padding-top: var(--e-3);
+  border-top: 1px solid var(--borde);
+}
+.historico p { margin: 0 0 var(--e-2); line-height: 1.45; }
+.historico b { color: var(--texto); font-weight: 600; }
+.historico-accion {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--e-2) var(--e-3);
+}
+.historico-accion button { flex: none; }
+#historico-estado { color: var(--texto-sec); }
+
+/* Carga en segundo plano. En azul y no en rojo a propósito: no ha pasado nada malo,
+   solo está entrando el histórico y se puede trabajar mientras. */
+.carga {
+  margin: var(--e-3) 0 0;
+  padding: var(--e-3) var(--e-4);
+  border-radius: var(--radio);
+  background: var(--acento-tenue);
+  border: 1px solid var(--acento-borde);
+  border-left-width: 3px;
+  font-size: var(--txt-md);
+  display: flex;
+  gap: var(--e-5);
+  align-items: center;
+  flex-wrap: wrap;
+}
+.carga-texto { flex: 1 1 320px; }
+/* El título y el botón de parar en la misma línea: el botón tiene que estar donde se
+   lee «se está descargando», no escondido al final del bloque. */
+.carga-texto strong { display: inline; }
+#carga-parar { float: right; margin-left: var(--e-2); padding: 2px var(--e-2); }
+.carga-barras {
+  flex: 1 1 260px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--e-1);
+}
+.carga-barras label {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 2px var(--e-3);
+  font-size: var(--txt-sm);
+  color: var(--texto-sec);
+}
+.carga-barras span { grid-column: 1 / -1; }
+.carga-barras progress {
+  grid-column: 1 / -1;
+  width: 100%;
+  height: 6px;
+  accent-color: var(--acento);
+}
+/* Sin `value` la barra es indeterminada: se usa cuando no se sabe el total, que es
+   preferible a inventarse un porcentaje. */
+.carga-barras progress:not([value]) { opacity: .7; }
+
+/* --- Pestañas -------------------------------------------------------------- */
+
+.vistas {
+  display: flex;
+  gap: 2px;
+  padding: var(--e-4) 0 0;
+  flex-wrap: wrap;
+  border-bottom: 1px solid var(--borde);
+  margin-bottom: var(--e-1);
+}
+.tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  color: var(--texto-sec);
+  font: inherit;
+  font-size: var(--txt-md);
+  font-weight: 500;
+  padding: var(--e-2) var(--e-3);
+  margin-bottom: -1px;
+  cursor: pointer;
+  border-radius: var(--radio-sm) var(--radio-sm) 0 0;
+  transition: color var(--transicion), background var(--transicion);
+}
+.tab:hover { color: var(--texto); background: var(--panel-2); }
+.tab[aria-selected="true"],
+.tab.activo {
+  color: var(--acento);
+  border-bottom-color: var(--acento);
+  font-weight: 650;
+}
+.tab.novedades { color: var(--verde); font-weight: 650; }
+.tab.novedades .ico { color: var(--verde); }
+
+/* --- Filtros --------------------------------------------------------------- */
+
+.filtros {
+  display: flex;
+  gap: var(--e-2);
+  flex-wrap: wrap;
+  align-items: center;
+  padding: var(--e-4) 0;
+}
+input[type=search], select {
+  background: var(--panel);
+  color: var(--texto);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio-sm);
+  padding: 7px var(--e-3);
+  font-size: var(--txt-md);
+  font-family: inherit;
+  box-shadow: var(--sombra-1);
+  transition: border-color var(--transicion);
+}
+input[type=search]:hover, select:hover { border-color: var(--borde-fuerte); }
+input[type=search] { flex: 1 1 260px; min-width: 0; }
+.check {
+  font-size: var(--txt-md);
+  color: var(--texto-sec);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  accent-color: var(--acento);
+}
+
+.contador { color: var(--texto-sec); font-size: var(--txt-md); margin: 0 0 var(--e-3); }
+.vacio { color: var(--texto-sec); text-align: center; padding: 50px 0; }
+
+/* Aviso de que la consulta está en marcha. Ocupa el mismo sitio que .vacio para
+   que la lista no salte al aparecer los resultados. */
+.cargando {
+  color: var(--texto-sec);
+  text-align: center;
+  padding: 50px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--e-3);
+}
+.cargando::before {
+  content: '';
+  width: 14px;
+  height: 14px;
+  border: 2px solid var(--borde);
+  border-top-color: var(--acento);
+  border-radius: 50%;
+  animation: girar 0.7s linear infinite;
+}
+@keyframes girar { to { transform: rotate(360deg); } }
+
+/* Quien haya pedido menos animación no quiere una rueda girando sin parar. */
+@media (prefers-reduced-motion: reduce) {
+  .cargando::before { animation-duration: 2.5s; }
+}
+
+/* --- La tarjeta ------------------------------------------------------------
+ *
+ * La unidad que se recorre cien veces al día, así que manda la jerarquía: primero de
+ * qué va el contrato, después quién lo saca, y a la derecha la cifra que explica por
+ * qué está en esa posición de la lista. Desde que la bandeja abre por «publicación más
+ * reciente», esa cifra es la antigüedad de la publicación y no los días al cierre; el
+ * plazo sigue estando, en su píldora, que es donde se compara con el de al lado.
+ */
+
+.lista { display: flex; flex-direction: column; gap: var(--e-2); }
+
+.tarjeta {
+  background: var(--panel);
+  border: 1px solid var(--borde);
+  border-left: 3px solid transparent;
+  border-radius: var(--radio);
+  padding: var(--e-3) var(--e-4);
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: var(--e-1) var(--e-4);
+  box-shadow: var(--sombra-1);
+  transition: border-color var(--transicion), background var(--transicion);
+}
+.tarjeta:hover { border-color: var(--borde-fuerte); background: var(--panel-2); }
+.tarjeta:hover h3 { color: var(--acento); }
+
+/* Los tres estados de triaje. El código de color se mantiene —verde sigue, azul
+   presentada— pero con el canto más ancho, porque a 3 px sobre un borde de 1 px había
+   que buscarlo. */
+.tarjeta.rev-siguiendo { border-left-color: var(--verde); }
+.tarjeta.rev-presentada { border-left-color: var(--acento); }
+/* Descartada: antes solo bajaba la opacidad al 50 %, y en tema claro eso sobre blanco
+   casi no se distingue de una normal. Ahora además pierde el fondo y el título deja de
+   ir en negrita: se lee como archivada, no como que la pantalla se ha estropeado. */
+.tarjeta.rev-descartado {
+  opacity: .62;
+  background: transparent;
+  box-shadow: none;
+}
+.tarjeta.rev-descartado h3 { font-weight: 500; color: var(--texto-sec); }
+.tarjeta.rev-descartado:hover { opacity: 1; }
+
+/* Algunas plataformas meten el objeto entero del contrato en el título, con párrafos de
+   veinte líneas. Se recorta a tres para poder recorrer la lista con la vista; el texto
+   completo está en la ficha. */
+.tarjeta h3 {
+  margin: 0;
+  font-size: var(--txt-base);
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: -0.005em;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  transition: color var(--transicion);
+}
+.tarjeta .organo {
+  color: var(--texto-sec);
+  font-size: var(--txt-md);
+  margin-top: 2px;
+  display: flex;
+  align-items: flex-start;
+  gap: 5px;
+}
+.tarjeta .organo .ico { margin-top: .22em; color: var(--texto-ter); }
+.tarjeta .meta {
+  grid-column: 1 / -1;
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: var(--e-2);
+  align-items: center;
+}
+
+/* --- Píldoras -------------------------------------------------------------
+ *
+ * Eran ocho variantes en una sola fila y se leían como un muro. Ahora hay dos rangos:
+ * las que deciden (nueva, perfil, importe, plazo) con color y contorno propio, y las
+ * descriptivas (comunidad, procedimiento, fuente, anuncios, estado) en gris de tercer
+ * nivel y sin borde. La fila sigue siendo una, pero la vista ya sabe dónde mirar.
+ */
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: var(--txt-xs);
+  padding: 2px var(--e-2);
+  border-radius: var(--radio-pill);
+  background: var(--panel-2);
+  color: var(--texto-ter);
+  border: 1px solid transparent;
+  white-space: nowrap;
+  font-weight: 500;
+}
+.pill .ico { width: .9em; height: .9em; stroke-width: 2; }
+
+/* Las que deciden */
+.pill.importe {
+  color: var(--texto);
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  border-color: var(--borde);
+}
+.pill.perfil { color: var(--acento); background: var(--acento-tenue); border-color: var(--acento-borde); }
+.pill.plazo-ok { color: var(--verde); background: var(--verde-tenue); border-color: transparent; }
+.pill.plazo-pronto { color: var(--ambar); background: var(--ambar-tenue); border-color: var(--ambar); }
+.pill.plazo-vencido { color: var(--rojo); background: var(--rojo-tenue); border-color: transparent; }
+.pill.incumbente { color: var(--ambar); background: var(--ambar-tenue); }
+.pill.anuncios { color: var(--texto-sec); border-color: var(--borde); border-style: dashed; }
+/* La única píldora rellena de la fila. El resto son contorno y compiten entre sí; ésta
+   tiene que verse al pasar la vista por la lista sin leerla, que es para lo que sirve. */
+.pill.nueva {
+  background: var(--acento);
+  border-color: var(--acento);
+  color: #fff;
+  font-weight: 650;
+}
+
+/* --- La cifra de la derecha ------------------------------------------------ */
+
+.derecha {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+}
+.dias {
+  font-size: var(--txt-xl);
+  font-weight: 650;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+.dias small {
+  display: block;
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--texto-ter);
+  text-transform: uppercase;
+  letter-spacing: .05em;
+}
+.dias.pronto { color: var(--ambar); }
+.dias.vencido { color: var(--rojo); }
+
+/* La antigüedad de la publicación, debajo de la cifra grande y en pequeño. No le quita
+   el sitio a los días al cierre —esa es la cifra que se decide mirando— pero desde que
+   la bandeja abre por «publicación más reciente» hay que poder ver por qué una ficha
+   está donde está. En acento mientras la ficha aún lleve la etiqueta «Nueva». */
+.publicada {
+  font-size: var(--txt-xs);
+  color: var(--texto-ter);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.publicada.recien { color: var(--acento); font-weight: 600; }
+
+/* --- Adjudicatarios -------------------------------------------------------- */
+
+.fila-empresa { cursor: pointer; }
+.fila-empresa .cifras { display: flex; gap: var(--e-5); font-variant-numeric: tabular-nums; }
+.fila-empresa .cifras b { font-weight: 650; }
+.contratos-empresa { grid-column: 1 / -1; margin-top: var(--e-3); font-size: var(--txt-md); }
+.contratos-empresa li { margin-bottom: var(--e-1); color: var(--texto-sec); }
+.contratos-empresa a { color: var(--acento); }
+
+/* --- Panel de detalle ------------------------------------------------------ */
+
+/* El fondo oscurecido no es adorno: hasta ahora el panel solo se cerraba con la «×» o
+   con Escape, y pulsar fuera —que es lo primero que hace cualquiera— no hacía nada.
+   Ahora hay dónde pulsar, y además separa la ficha de la lista que queda detrás. */
+.panel-fondo {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, .34);
+  z-index: 19;
+  border: 0;
+  padding: 0;
+  cursor: default;
+}
+
+.panel {
+  position: fixed;
+  top: 0; right: 0; bottom: 0;
+  width: min(560px, 100%);
+  background: var(--panel);
+  border-left: 1px solid var(--borde-fuerte);
+  padding: var(--e-5) var(--e-5) 40px;
+  overflow-y: auto;
+  box-shadow: var(--sombra-2);
+  z-index: 20;
+  animation: entrar-panel 160ms ease;
+}
+@keyframes entrar-panel {
+  from { transform: translateX(16px); opacity: 0; }
+  to { transform: none; opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .panel { animation: none; }
+}
+
+.cerrar {
+  position: absolute; top: var(--e-3); right: var(--e-4);
+  background: none; border: 0; color: var(--texto-sec);
+  font-size: 26px; cursor: pointer; line-height: 1;
+  border-radius: var(--radio-sm);
+}
+.cerrar:hover { color: var(--texto); background: var(--panel-2); }
+.panel h2 {
+  font-size: var(--txt-lg);
+  font-weight: 650;
+  margin: 0 30px var(--e-1) 0;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+}
+/* 150 px de etiqueta partían «Adjudicatario» y dejaban los valores largos en una
+   columna estrecha. Con `max-content` acotado, la columna se ajusta a la etiqueta más
+   larga que haya de verdad y el valor se queda con el resto. */
+.panel .campo {
+  display: grid;
+  grid-template-columns: minmax(96px, max-content) 1fr;
+  gap: 6px var(--e-3);
+  font-size: var(--txt-md);
+  padding: 5px 0;
+  border-bottom: 1px solid var(--borde);
+}
+.panel .campo dt { color: var(--texto-sec); }
+.panel .campo dd { margin: 0; }
+.panel h4 {
+  font-size: var(--txt-sm);
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: var(--texto-sec);
+  margin: var(--e-5) 0 var(--e-2);
+  font-weight: 600;
+}
+.motivo {
+  background: var(--panel-2);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio-sm);
+  padding: var(--e-2) var(--e-3);
+  font-size: var(--txt-sm);
+  color: var(--texto-sec);
+  line-height: 1.5;
+}
+/* La descripción del pliego, debajo del motivo. Antes se le ponían los estilos en línea
+   desde `app.js`, que era el único sitio del proyecto donde se hacía eso. */
+.descripcion { font-size: var(--txt-md); color: var(--texto-sec); margin: var(--e-2) 0 0; }
+.acciones { display: flex; gap: 6px; flex-wrap: wrap; margin: var(--e-3) 0; }
+.acciones button.activo {
+  border-color: var(--acento);
+  color: var(--acento);
+  background: var(--acento-tenue);
+}
+textarea {
+  width: 100%; min-height: 74px; background: var(--panel-2); color: var(--texto);
+  border: 1px solid var(--borde); border-radius: var(--radio-sm); padding: var(--e-2) var(--e-3);
+  font: inherit; font-size: var(--txt-md); resize: vertical;
+}
+.enlaces { display: flex; flex-direction: column; gap: 5px; font-size: var(--txt-md); }
+.enlaces a { color: var(--acento); word-break: break-all; }
+.hist { font-size: var(--txt-sm); color: var(--texto-sec); }
+.hist li { margin-bottom: 3px; }
+.guardado { color: var(--verde); font-size: var(--txt-sm); margin-left: var(--e-2); }
+
+/* --- Términos de búsqueda -------------------------------------------------- */
+
+.consejos {
+  background: var(--panel-2);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+  padding: var(--e-3) var(--e-4);
+  font-size: var(--txt-sm);
+  color: var(--texto-sec);
+  margin-bottom: var(--e-4);
+}
+.consejos ul { margin: 0; padding-left: 1.4em; }
+.consejos li { margin: 3px 0; }
+.consejos b { color: var(--texto); }
+
+.perfil-caja {
+  background: var(--panel);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+  padding: var(--e-4);
+  margin-bottom: var(--e-2);
+  box-shadow: var(--sombra-1);
+}
+.perfil-caja > header {
+  display: flex; align-items: center; gap: var(--e-3); flex-wrap: wrap; margin-bottom: var(--e-3);
+}
+.perfil-caja h3 { margin: 0; font-size: var(--txt-base); font-weight: 650; }
+.campos { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: var(--e-3); }
+.campo-term label { display: block; font-size: var(--txt-sm); color: var(--texto-sec); margin-bottom: var(--e-1); }
+.campo-term label b { color: var(--texto); font-weight: 600; }
+.campo-term textarea { min-height: 108px; font-size: var(--txt-sm); line-height: 1.45; }
+.campo-num { display: flex; align-items: center; gap: var(--e-2); font-size: var(--txt-md); }
+.campo-num input { width: 120px; }
+input[type=number], input[type=text] {
+  background: var(--panel-2); color: var(--texto); border: 1px solid var(--borde);
+  border-radius: var(--radio-sm); padding: 6px var(--e-2); font: inherit; font-size: var(--txt-md);
+}
+
+.acciones-ajustes { display: flex; align-items: center; gap: var(--e-3); margin: var(--e-4) 0; flex-wrap: wrap; }
+.previsualizacion {
+  background: var(--panel);
+  border: 1px solid var(--acento);
+  border-radius: var(--radio);
+  padding: var(--e-4);
+  font-size: var(--txt-md);
+  box-shadow: var(--sombra-1);
+}
+.previsualizacion h4 { margin: var(--e-3) 0 6px; }
+.previsualizacion li { color: var(--texto-sec); margin-bottom: 3px; }
+
+.pie {
+  margin-top: var(--e-6);
+  padding-top: var(--e-3);
+  border-top: 1px solid var(--borde);
+  color: var(--texto-ter);
+  font-size: var(--txt-sm);
+}
+
+/* --- Analítica -----------------------------------------------------------
+ *
+ * Lo de aquí abajo está medido en pantalla, no tanteado, y los comentarios dicen contra
+ * qué. Si hay que cambiar algo, medir primero.
+ */
+
+/* El primer sitio del proyecto que necesita un ancho máximo: el resto de las vistas son
+   listas, que a 2.500 px se leen igual de bien, pero una barra de 2.400 px de largo no
+   dice nada. Se sigue el precedente del `min()` de `.panel`.
+
+   1.280 y no 920: con doce bloques y etiquetas que son nombres de comunidad y de órgano,
+   los 920 dejaban media pantalla vacía a la derecha y partían «Comunidad Valenciana» en
+   dos líneas. A 1.280 cada pareja son dos columnas de ~630 px, que es donde una barra
+   con su etiqueta al lado se lee de un vistazo. */
+.analitica {
+  width: min(1280px, 100%);
+  display: grid;
+  gap: var(--e-3);
+}
+/* La misma idea que `.campos` —auto-fit sin un solo breakpoint— pero con el mínimo
+   ajustado: con 280 px caben tres columnas en los 920 de ancho, y como cada pareja tiene
+   dos bloques quedaba un tercio de hueco a la derecha. Con 380 caben exactamente dos, y
+   una sola cuando la ventana no da. El `min()` evita que se desborde en un móvil. */
+.analitica .pareja {
+  display: grid;
+  gap: var(--e-3);
+  grid-template-columns: repeat(auto-fit, minmax(min(380px, 100%), 1fr));
+  /* Cada tarjeta con su altura y no estiradas a la de la más alta: medido, el calendario
+     se quedaba con 185 px de vacío dentro del recuadro al lado de un bloque más largo, y
+     un hueco enmarcado se lee como un fallo. Alineadas por arriba, la fila mantiene el
+     ritmo horizontal y el borde de abajo llega donde acaba el dato. */
+  align-items: start;
+}
+
+.bloque {
+  background: var(--panel);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+  padding: var(--e-4);
+  box-shadow: var(--sombra-1);
+}
+.bloque h3 { margin: 0 0 2px; font-size: var(--txt-base); font-weight: 650; }
+.bloque .pregunta { margin: 0 0 var(--e-3); font-size: var(--txt-sm); color: var(--texto-sec); }
+.bloque .nota { margin: var(--e-3) 0 0; font-size: var(--txt-sm); color: var(--texto-ter); }
+.bloque .titular {
+  font-size: var(--txt-2xl);
+  font-weight: 650;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+}
+.bloque .titular small { font-size: var(--txt-md); font-weight: 400; color: var(--texto-sec); }
+.bloque .cifras-fila { display: flex; gap: var(--e-5); flex-wrap: wrap; margin-bottom: var(--e-1); }
+.bloque .cifras-fila div { font-size: var(--txt-sm); color: var(--texto-sec); }
+.bloque .cifras-fila b {
+  display: block; font-size: var(--txt-xl); font-weight: 650; color: var(--texto);
+  font-variant-numeric: tabular-nums;
+}
+.bloque .cifras-fila .ojo b { color: var(--ambar); }
+
+/* Una fila de barra: etiqueta, carril y cifra. La cifra va SIEMPRE en texto al lado, que
+   es lo que hace que el dato se lea con un lector de pantalla y no solo se vea. */
+.fila-barra {
+  display: grid;
+  grid-template-columns: var(--ancho-etiqueta, 5.5em) 1fr auto;
+  align-items: center;
+  gap: var(--e-2);
+  font-size: var(--txt-sm);
+  margin-bottom: 3px;
+}
+.fila-barra .etiqueta { color: var(--texto-sec); }
+/* Tres anchos de etiqueta, y los tres salen de medir el texto más largo de cada bloque en
+   pantalla, no de tantear: 5,5 em para los meses («Mär *» ocupa 2,6); 9 em para los
+   tramos, donde el peor es «über 1,0 Mio. €» con 8,2; y 13 em para las categorías, donde
+   manda «Mecklenburg-Vorpommern» (11,5). Un solo ancho para todos obligaba a elegir entre
+   desperdiciar media tarjeta en el calendario o partir las etiquetas en cuatro líneas,
+   que es justo lo que había que arreglar.
+
+   El alemán obligó a subir el bucket medio de 8 a 9 em: «100 T€–500 T€» ocupa lo mismo
+   que ocupaba «100k €–500k €» —por eso la abreviatura es «T€» y no «Tsd. €»—, pero
+   «über 1,0 Mio. €» es más largo que el «más de 1,0 M€» castellano.
+
+   Las Verfahrensart NO caben en ninguna columna: «Verhandlungsverfahren ohne
+   Teilnahmewettbewerb» son unos 22 em contra los 13 de la más ancha. Ese bloque usa
+   `.apilada`, que ya existía para los nombres de órgano. */
+.bloque.etiquetas-medias { --ancho-etiqueta: 9em; }
+.bloque.etiquetas-anchas { --ancho-etiqueta: 13em; }
+/* Y cuando la etiqueta no es una categoría sino un NOMBRE, no hay columna que valga: un
+   órgano de contratación pasa de sesenta caracteres. Ahí la etiqueta se pone encima del
+   carril y ocupa el ancho entero. */
+.fila-barra.apilada {
+  grid-template-columns: 1fr auto;
+  grid-template-areas: "etiqueta etiqueta" "barra valor";
+  gap: 2px var(--e-2);
+  margin-bottom: var(--e-2);
+}
+/* `overflow-wrap` y `hyphens` son para el alemán: los compuestos no rompen solos, y sin
+   esto «Informationssicherheitsmanagementsystem» desborda la tarjeta en vez de partirse.
+   La silabación correcta la activa el `lang="de"` del documento. */
+.fila-barra.apilada .etiqueta {
+  grid-area: etiqueta;
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+  hyphens: auto;
+}
+.fila-barra.apilada .barra { grid-area: barra; }
+.fila-barra.apilada .valor { grid-area: valor; }
+.fila-barra .valor { font-variant-numeric: tabular-nums; min-width: 3.2em; text-align: right; }
+.barra { background: var(--panel-2); border-radius: 3px; height: 14px; position: relative; }
+.barra-relleno { background: var(--acento); border-radius: 3px; height: 100%; min-width: 2px; }
+/* La segunda serie (el año en curso) va superpuesta y más fina, para que la desviación se
+   vea en lugar de promediarse. */
+.barra-encima {
+  position: absolute; top: 3px; left: 0; height: 8px;
+  background: var(--texto); opacity: .55; border-radius: 2px; min-width: 2px;
+}
+/* El mes en curso, rayado: sus datos están a medias y no se puede leer como los demás. */
+.barra-parcial {
+  background: repeating-linear-gradient(
+    135deg, var(--acento), var(--acento) 4px, var(--panel-2) 4px, var(--panel-2) 8px);
+}
+.leyenda { font-size: var(--txt-xs); color: var(--texto-sec); margin: var(--e-2) 0 0; }
+.leyenda .muestra { display: inline-block; width: 10px; height: 10px; border-radius: 2px; vertical-align: -1px; }
+.leyenda .muestra.media { background: var(--acento); }
+.leyenda .muestra.curso { background: var(--texto); opacity: .55; }
+
+/* Tabla escueta para los cinco mayores y para los CPV: sin bordes, que aquí lo que se
+   compara son las cifras y no las celdas. */
+.tabla-escueta { width: 100%; border-collapse: collapse; font-size: var(--txt-sm); }
+.tabla-escueta td { padding: 3px 0; vertical-align: top; }
+.tabla-escueta td.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; padding-left: var(--e-3); }
+.tabla-escueta .apagado { color: var(--texto-ter); }

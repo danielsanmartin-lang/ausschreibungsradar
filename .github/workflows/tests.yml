@@ -1,0 +1,49 @@
+# Las pruebas en cada push. No hay nada que instalar —el proyecto es solo biblioteca
+# estándar— así que esto son literalmente dos pasos y tarda segundos.
+#
+# Tres combinaciones y no una:
+#   - Python 3.9 porque es el mínimo que declara el README, y es el que se rompe sin
+#     avisar: basta una anotación tipo `str | None` en un fichero sin
+#     `from __future__ import annotations` para que ni se pueda importar. En el equipo de
+#     desarrollo, con un Python nuevo, eso no falla nunca.
+#   - Python 3.13 porque es lo que va a tener quien se instale Python este año.
+#   - macOS porque es donde se usa de verdad: la tarea diaria es launchd y el aviso de
+#     los certificados existe por el almacén de macOS.
+#
+# Ninguna prueba necesita red: `test_net` solo lee el bundle de CAs del repositorio y
+# los conectores se falsean con `unittest.mock`. Y `config/suchprofile.json` no se
+# versiona, así que los casos reales de `test_matching` se saltan solos con `skipUnless`.
+#
+# Cuidado con RADAR_SIN_PROGRESO: definirla aquí «para que no ensucie el log» tumbaría
+# seis pruebas del indicador de progreso, que precisamente comprueban que pinta.
+name: pruebas
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  pruebas:
+    runs-on: ${{ matrix.so }}
+    strategy:
+      # Que un fallo en 3.9 no cancele la ejecución de los demás: interesa saber si es
+      # cosa de esa versión o de todas.
+      fail-fast: false
+      matrix:
+        include:
+          - so: ubuntu-latest
+            python: "3.9"
+          - so: ubuntu-latest
+            python: "3.13"
+          - so: macos-latest
+            python: "3.13"
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+
+      - name: Pruebas
+        run: python -m unittest discover -s tests -t . -v

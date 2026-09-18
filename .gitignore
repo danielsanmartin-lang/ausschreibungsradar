@@ -1,0 +1,35 @@
+# La base de datos y todo lo que se descarga. Son cientos de MB y además contiene
+# el triaje y las notas personales de cada uno: cada persona construye la suya al
+# arrancar, no se comparte.
+data/
+
+# Los términos de búsqueda de cada uno. Solo se versiona `suchprofile.beispiel.json`, que es
+# genérico: la lista de verdad —raíces, erratas de los pliegos, lenguas cooficiales— es el
+# trabajo de la persona y no tiene por qué acabar en un repositorio público.
+config/suchprofile.json
+config/suchprofile.vorherige.json
+config/suchprofile.json.tmp
+
+# Lo que aparta el actualizador para poder volver atrás (radar.anterior/, web.anterior/…).
+*.anterior
+
+# La app de macOS montada. Se reconstruye en un segundo con
+# `python3 herramientas/construir_app.py`, así que no tiene sentido versionarla. Lo que
+# SÍ se versiona es `macos/prefabricado/`, que es el binario ya compilado del que tira
+# quien no tiene las herramientas de Apple instaladas.
+Ausschreibungsradar.app/
+# Y el zip que se adjunta a la release, que se genera con --zip.
+Ausschreibungsradar *.zip
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Node: solo se usa para regenerar el documento de docs/, no en tiempo de ejecución.
+node_modules/
+package-lock.json
+
+# macOS
+.DS_Store

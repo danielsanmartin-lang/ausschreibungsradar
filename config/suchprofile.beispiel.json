@@ -1,0 +1,226 @@
+{
+  "_hilfe": [
+    "Jedes Profil ist eine gespeicherte Suche. Datei bearbeiten und danach",
+    "'python3 radar.py match' starten: alles schon Heruntergeladene wird neu bewertet,",
+    "ohne erneut zu laden.",
+    "",
+    "starke_begriffe        -> reichen allein, damit eine Ausschreibung aufgenommen wird.",
+    "schwache_begriffe      -> mehrdeutig: sie zählen nur, wenn zusätzlich etwas aus",
+    "                          erforderlicher_kontext IM TEXT steht.",
+    "erforderlicher_kontext -> was aus einem mehrdeutigen Begriff einen Treffer macht.",
+    "cpv_praefixe           -> geben Punkte, nehmen aber NIE allein auf und gelten auch",
+    "                          nicht als Kontext (80533100 ist die gesamte IT-Schulung",
+    "                          des Landes, Tabellenkalkulation inklusive).",
+    "ausschluss             -> sticht alles andere.",
+    "mindestbetrag          -> verwirft nur, wenn der Auftragswert bekannt ist. Hier",
+    "                          bewusst null: nur 7 % der Bekanntmachungen nennen ihn.",
+    "bundesland             -> leere Liste = ganz Deutschland.",
+    "quellen                -> beschränkt das Profil auf bestimmte Quellen (leer = alle).",
+    "abfrage_begriffe       -> was an Quellen geschickt wird, die serverseitig filtern",
+    "                          (nur TED). Der Bekanntmachungsservice filtert nicht: dort",
+    "                          wird alles geladen und lokal gefiltert.",
+    "",
+    "DREI REGELN, DIE IM DEUTSCHEN ANDERS SIND ALS IN ANDEREN SPRACHEN:",
+    "",
+    "1. Ein Begriff greift nur am WORTANFANG. Der Bindestrich zählt dabei als",
+    "   Wortgrenze, also findet 'sicherheit' auch 'IT-Sicherheit' und",
+    "   'Cyber-Sicherheit'. Am Ende eines zusammengeschriebenen Kompositums greift er",
+    "   NICHT: 'Ausfallsicherheit' und 'Arbeitssicherheit' fallen von selbst heraus —",
+    "   und das ist gewollt, denn das ist Betriebs- und Arbeitsschutz, nicht Cyber.",
+    "   Am Wortanfang wächst der Stamm dagegen weiter: 'cyber' deckt Cybersicherheit,",
+    "   Cyberangriff und Cyberbedrohung ab.",
+    "",
+    "2. Mehrwortbegriffe IMMER doppelt eintragen, mit Leerzeichen und mit Bindestrich:",
+    "   'social engineering' findet 'Social-Engineering' nicht, und umgekehrt.",
+    "",
+    "3. ausschluss bleibt fast leer, und das ist gemessen. Mit den naheliegenden",
+    "   Ausschlüssen (arbeitssicherheit, ausfallsicherheit, brandschutz) wurden 10 von",
+    "   13 Testfällen richtig eingeordnet, ohne sie 12 von 13: Sammelausschreibungen",
+    "   für Schulungen bündeln IT-Sicherheit, Brandschutz und Erste Hilfe in EINER",
+    "   Bekanntmachung, und genau die will man sehen. Ein Ausschluss greift außerdem",
+    "   auch nach einem Bindestrich und würde 'IT-Sicherheitsdienstleistungen'",
+    "   mitnehmen.",
+    "",
+    "Umlaute und ß sind egal ('Maßnahmen' = 'Massnahmen' = 'MASSNAHMEN', 'Prüfung' =",
+    "'Prufung'). Tippfehler ruhig stehen lassen: 'phising' mit einem s steht so in",
+    "veröffentlichten Unterlagen. Englisch bleibt englisch: 'Awareness', 'Phishing' und",
+    "'Penetration Test' werden in deutschen Vergabeunterlagen nicht übersetzt."
+  ],
+  "profile": [
+    {
+      "name": "Security Awareness und Phishing",
+      "aktiv": true,
+      "cpv_praefixe": [
+        "80533100", "80511000", "80510000", "80500000", "80570000",
+        "79416000", "79341000", "72500000", "72200000", "48180000"
+      ],
+      "starke_begriffe": [
+        "phishing", "phising", "smishing", "vishing", "quishing",
+        "social engineering", "social-engineering",
+        "security awareness", "security-awareness",
+        "awareness-schulung", "awareness schulung",
+        "awareness-training", "awareness training",
+        "awareness-plattform", "awareness plattform",
+        "awareness-tool", "awareness-portal", "awareness-lösung",
+        "cyber-awareness", "cyberawareness",
+        "sicherheitsbewusstsein", "sicherheitssensibilisierung", "sicherheitskultur",
+        "sicherheitsschulung", "informationssicherheitsschulung",
+        "cybersicherheitsschulung",
+        "human firewall", "human-firewall",
+        "cyberhygiene", "cyber-hygiene",
+        "datenschutzschulung", "datenschutz-schulung",
+        "datenschutzsensibilisierung", "datenschutz-sensibilisierung"
+      ],
+      "schwache_begriffe": [
+        "sensibilisier", "awareness", "bewusstsein",
+        "schulung", "fortbildung", "unterweisung", "e-learning", "elearning",
+        "mitarbeiterschulung", "mitarbeitersensibilisierung", "mitarbeiterunterweisung",
+        "beschäftigtenschulung", "beschäftigtensensibilisierung",
+        "nutzerschulung", "nutzersensibilisierung",
+        "anwenderschulung", "anwendersensibilisierung",
+        "benutzerschulung", "personalschulung"
+      ],
+      "erforderlicher_kontext": [
+        "cyber", "it-sicherheit", "it sicherheit",
+        "informationssicherheit", "datensicherheit",
+        "bsi ", "it-grundschutz", "grundschutz", "isms",
+        "iso 27001", "iso-27001", "27001",
+        "nis2", "nis-2", "nis 2", "kritis", "tisax",
+        "phishing", "social engineering", "social-engineering",
+        "ransomware", "malware", "schadsoftware", "schadprogramm", "trojaner",
+        "sicherheitsvorfall", "sicherheitslücke", "datenpanne",
+        "hackerangriff", "hacking", "informationssicherheitsbeauftragte"
+      ],
+      "ausschluss": [
+        "cybermobbing", "cyber-mobbing",
+        "cybergrooming", "cyber-grooming",
+        "cybergewalt"
+      ],
+      "mindestbetrag": null,
+      "bundesland": [],
+      "quellen": [],
+      "abfrage_begriffe": [
+        "phishing", "smishing", "vishing", "quishing",
+        "social engineering", "security awareness", "awareness",
+        "sensibilisierung", "sicherheitsbewusstsein", "sicherheitsschulung",
+        "awareness-schulung", "awareness-plattform",
+        "cybersicherheit", "cyber-sicherheit", "cybersecurity",
+        "it-sicherheit", "informationssicherheit", "it-grundschutz"
+      ]
+    },
+    {
+      "name": "E-Mail-Sicherheit",
+      "aktiv": true,
+      "cpv_praefixe": ["72500000", "72200000", "72413000", "48730000", "48180000"],
+      "starke_begriffe": [
+        "dmarc", "dkim", "mta-sts", "bimi",
+        "spf-record", "spf-eintrag", "sender policy framework",
+        "e-mail-sicherheit", "e-mail sicherheit", "email-sicherheit",
+        "emailsicherheit", "mailsicherheit",
+        "e-mail-schutz", "e-mail-verschlüsselung", "e-mail verschlüsselung",
+        "secure email gateway", "secure e-mail gateway",
+        "e-mail-gateway", "email-gateway", "mailgateway", "mail-gateway",
+        "anti-phishing", "antiphishing", "anti-spam", "antispam",
+        "spam-filter", "spamfilter", "spamschutz", "spam-schutz",
+        "e-mail-filter", "mailfilter", "mail-filter",
+        "spoofing", "domain-spoofing",
+        "absenderauthentifizierung", "absender-authentifizierung",
+        "e-mail-authentifizierung",
+        "virtuelle poststelle", "virtuelle-poststelle",
+        "verschlüsselungsgateway", "signaturgateway"
+      ],
+      "schwache_begriffe": [
+        "mailserver", "mail-server", "mailsystem", "e-mail-system",
+        "mailinfrastruktur", "e-mail-infrastruktur", "mailumgebung",
+        "exchange", "exchange online", "groupware", "spf "
+      ],
+      "erforderlicher_kontext": [
+        "it-sicherheit", "it sicherheit", "cybersicherheit", "cyber-sicherheit",
+        "cybersecurity", "cyberangriff", "informationssicherheit", "datensicherheit",
+        "phishing", "malware", "schadsoftware", "ransomware", "virenschutz",
+        "spam", "verschlüsselung", "bsi ", "it-grundschutz",
+        "authentifizierung", "mehrfaktor", "spoofing", "quarantäne",
+        "sicherheitsvorfall", "bedrohungsabwehr"
+      ],
+      "ausschluss": [
+        "bewachung", "wachdienst", "objektschutz", "werkschutz", "pfortendienst",
+        "postdienstleistung", "briefpost", "frankier", "kuvertier",
+        "kurierdienst", "paketdienst"
+      ],
+      "mindestbetrag": null,
+      "bundesland": [],
+      "quellen": [],
+      "abfrage_begriffe": [
+        "dmarc", "dkim", "mta-sts", "anti-phishing", "antiphishing", "spoofing",
+        "secure email gateway", "e-mail-sicherheit", "e-mail-verschlüsselung",
+        "spamfilter", "spam-filter", "mailgateway", "absenderauthentifizierung"
+      ]
+    },
+    {
+      "name": "Markterkundungen (Cyber)",
+      "aktiv": true,
+      "cpv_praefixe": ["72500000", "72200000", "80500000", "79416000"],
+      "starke_begriffe": [
+        "phishing", "phising", "smishing", "vishing", "social engineering",
+        "security awareness", "awareness-schulung", "awareness-plattform",
+        "sicherheitsbewusstsein", "sicherheitssensibilisierung",
+        "cybersicherheit", "cyber-sicherheit", "cybersecurity",
+        "it-sicherheit", "informationssicherheit", "it-grundschutz",
+        "dmarc", "dkim", "e-mail-sicherheit", "secure email gateway"
+      ],
+      "schwache_begriffe": [],
+      "erforderlicher_kontext": [],
+      "ausschluss": [],
+      "mindestbetrag": null,
+      "bundesland": [],
+      "quellen": ["oeffentlichevergabe:markterkundung"],
+      "abfrage_begriffe": [
+        "phishing", "security awareness", "cybersicherheit", "it-sicherheit",
+        "informationssicherheit", "e-mail-sicherheit"
+      ]
+    },
+    {
+      "name": "Cybersicherheit und Informationssicherheit",
+      "aktiv": false,
+      "cpv_praefixe": [
+        "72500000", "72200000", "72413000", "48730000", "48180000", "79417000"
+      ],
+      "starke_begriffe": [
+        "cybersicherheit", "cyber-sicherheit", "cybersecurity", "cyber security",
+        "it-sicherheit", "it sicherheit",
+        "informationssicherheit", "informationssicherheitsmanagement",
+        "isms", "it-grundschutz", "grundschutz", "schutzbedarfsfeststellung",
+        "iso 27001", "iso-27001", "27001", "bsi-standard",
+        "nis2", "nis-2", "nis 2", "kritis", "tisax", "c5-testat",
+        "security operations center", "security-operations-center",
+        "soc-dienstleistung", "cyber-abwehrzentrum", "cert-dienstleistung",
+        "csirt", "siem", "soar",
+        "penetrationstest", "pentest",
+        "schwachstellenmanagement", "schwachstellenscan",
+        "angriffserkennung", "systeme zur angriffserkennung",
+        "sicherheitsaudit", "informationssicherheitsaudit", "it-sicherheitskonzept",
+        "ransomware", "schadsoftware", "malware",
+        "cyberangriff", "cyberbedrohung", "cybervorfall", "cyberkriminalität",
+        "cyberabwehr", "cyberresilienz", "cybernotfall",
+        "zero trust", "zero-trust",
+        "endpoint detection", "intrusion detection", "intrusion prevention",
+        "identitätsmanagement", "identity and access management",
+        "pki ", "zertifikatsmanagement",
+        "managed security services", "managed security"
+      ],
+      "schwache_begriffe": [],
+      "erforderlicher_kontext": [],
+      "ausschluss": [
+        "cybermobbing", "cyber-mobbing", "cybergrooming", "cybergewalt"
+      ],
+      "mindestbetrag": null,
+      "bundesland": [],
+      "quellen": [],
+      "abfrage_begriffe": [
+        "cybersicherheit", "cyber-sicherheit", "cybersecurity", "it-sicherheit",
+        "informationssicherheit", "it-grundschutz", "penetrationstest",
+        "security operations center", "schwachstellenmanagement"
+      ]
+    }
+  ]
+}

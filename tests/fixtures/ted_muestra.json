@@ -1,0 +1,294 @@
+{
+ "notices": [
+  {
+   "deadline-receipt-request": [
+    "2016-11-16T10:00:00+01:00"
+   ],
+   "notice-type": "cn-standard",
+   "publication-number": "355940-2016",
+   "dispatch-date": "2016-10-06Z",
+   "buyer-country": [
+    "ESP"
+   ],
+   "total-value": 505525.2,
+   "procedure-type": "open",
+   "classification-cpv": [
+    "80533100"
+   ],
+   "contract-nature": [
+    "services"
+   ],
+   "buyer-name": {
+    "spa": [
+     "Excelentísimo Ayuntamiento de Murcia"
+    ]
+   },
+   "publication-date": "2016-10-12+02:00",
+   "links": {
+    "xml": {
+     "MUL": "https://ted.europa.eu/en/notice/355940-2016/xml"
+    },
+    "pdf": {
+     "BUL": "https://ted.europa.eu/bg/notice/355940-2016/pdf",
+     "SPA": "https://ted.europa.eu/es/notice/355940-2016/pdf",
+     "CES": "https://ted.europa.eu/cs/notice/355940-2016/pdf",
+     "DAN": "https://ted.europa.eu/da/notice/355940-2016/pdf",
+     "DEU": "https://ted.europa.eu/de/notice/355940-2016/pdf",
+     "EST": "https://ted.europa.eu/et/notice/355940-2016/pdf",
+     "ELL": "https://ted.europa.eu/el/notice/355940-2016/pdf",
+     "ENG": "https://ted.europa.eu/en/notice/355940-2016/pdf",
+     "FRA": "https://ted.europa.eu/fr/notice/355940-2016/pdf",
+     "GLE": "https://ted.europa.eu/ga/notice/355940-2016/pdf",
+     "HRV": "https://ted.europa.eu/hr/notice/355940-2016/pdf",
+     "ITA": "https://ted.europa.eu/it/notice/355940-2016/pdf",
+     "LAV": "https://ted.europa.eu/lv/notice/355940-2016/pdf",
+     "LIT": "https://ted.europa.eu/lt/notice/355940-2016/pdf",
+     "HUN": "https://ted.europa.eu/hu/notice/355940-2016/pdf",
+     "MLT": "https://ted.europa.eu/mt/notice/355940-2016/pdf",
+     "NLD": "https://ted.europa.eu/nl/notice/355940-2016/pdf",
+     "POL": "https://ted.europa.eu/pl/notice/355940-2016/pdf",
+     "POR": "https://ted.europa.eu/pt/notice/355940-2016/pdf",
+     "RON": "https://ted.europa.eu/ro/notice/355940-2016/pdf",
+     "SLK": "https://ted.europa.eu/sk/notice/355940-2016/pdf",
+     "SLV": "https://ted.europa.eu/sl/notice/355940-2016/pdf",
+     "FIN": "https://ted.europa.eu/fi/notice/355940-2016/pdf",
+     "SWE": "https://ted.europa.eu/sv/notice/355940-2016/pdf"
+    },
+    "pdfs": {
+     "SPA": "https://ted.europa.eu/es/notice/355940-2016/pdfs"
+    },
+    "html": {
+     "BUL": "https://ted.europa.eu/bg/notice/-/detail/355940-2016",
+     "SPA": "https://ted.europa.eu/es/notice/-/detail/355940-2016",
+     "CES": "https://ted.europa.eu/cs/notice/-/detail/355940-2016",
+     "DAN": "https://ted.europa.eu/da/notice/-/detail/355940-2016",
+     "DEU": "https://ted.europa.eu/de/notice/-/detail/355940-2016",
+     "EST": "https://ted.europa.eu/et/notice/-/detail/355940-2016",
+     "ELL": "https://ted.europa.eu/el/notice/-/detail/355940-2016",
+     "ENG": "https://ted.europa.eu/en/notice/-/detail/355940-2016",
+     "FRA": "https://ted.europa.eu/fr/notice/-/detail/355940-2016",
+     "GLE": "https://ted.europa.eu/ga/notice/-/detail/355940-2016",
+     "HRV": "https://ted.europa.eu/hr/notice/-/detail/355940-2016",
+     "ITA": "https://ted.europa.eu/it/notice/-/detail/355940-2016",
+     "LAV": "https://ted.europa.eu/lv/notice/-/detail/355940-2016",
+     "LIT": "https://ted.europa.eu/lt/notice/-/detail/355940-2016",
+     "HUN": "https://ted.europa.eu/hu/notice/-/detail/355940-2016",
+     "MLT": "https://ted.europa.eu/mt/notice/-/detail/355940-2016",
+     "NLD": "https://ted.europa.eu/nl/notice/-/detail/355940-2016",
+     "POL": "https://ted.europa.eu/pl/notice/-/detail/355940-2016",
+     "POR": "https://ted.europa.eu/pt/notice/-/detail/355940-2016",
+     "RON": "https://ted.europa.eu/ro/notice/-/detail/355940-2016",
+     "SLK": "https://ted.europa.eu/sk/notice/-/detail/355940-2016",
+     "SLV": "https://ted.europa.eu/sl/notice/-/detail/355940-2016",
+     "FIN": "https://ted.europa.eu/fi/notice/-/detail/355940-2016",
+     "SWE": "https://ted.europa.eu/sv/notice/-/detail/355940-2016"
+    },
+    "htmlDirect": {
+     "BUL": "https://ted.europa.eu/bg/notice/355940-2016/html",
+     "SPA": "https://ted.europa.eu/es/notice/355940-2016/html",
+     "CES": "https://ted.europa.eu/cs/notice/355940-2016/html",
+     "DAN": "https://ted.europa.eu/da/notice/355940-2016/html",
+     "DEU": "https://ted.europa.eu/de/notice/355940-2016/html",
+     "EST": "https://ted.europa.eu/et/notice/355940-2016/html",
+     "ELL": "https://ted.europa.eu/el/notice/355940-2016/html",
+     "ENG": "https://ted.europa.eu/en/notice/355940-2016/html",
+     "FRA": "https://ted.europa.eu/fr/notice/355940-2016/html",
+     "GLE": "https://ted.europa.eu/ga/notice/355940-2016/html",
+     "HRV": "https://ted.europa.eu/hr/notice/355940-2016/html",
+     "ITA": "https://ted.europa.eu/it/notice/355940-2016/html",
+     "LAV": "https://ted.europa.eu/lv/notice/355940-2016/html",
+     "LIT": "https://ted.europa.eu/lt/notice/355940-2016/html",
+     "HUN": "https://ted.europa.eu/hu/notice/355940-2016/html",
+     "MLT": "https://ted.europa.eu/mt/notice/355940-2016/html",
+     "NLD": "https://ted.europa.eu/nl/notice/355940-2016/html",
+     "POL": "https://ted.europa.eu/pl/notice/355940-2016/html",
+     "POR": "https://ted.europa.eu/pt/notice/355940-2016/html",
+     "RON": "https://ted.europa.eu/ro/notice/355940-2016/html",
+     "SLK": "https://ted.europa.eu/sk/notice/355940-2016/html",
+     "SLV": "https://ted.europa.eu/sl/notice/355940-2016/html",
+     "FIN": "https://ted.europa.eu/fi/notice/355940-2016/html",
+     "SWE": "https://ted.europa.eu/sv/notice/355940-2016/html"
+    }
+   },
+   "notice-title": {
+    "swe": "Spanien-Murcia: Datautbildning",
+    "lav": "Spānija-Mursija: Datormācības pakalpojumi",
+    "hun": "Spanyolország-Murcia: Számítógépes képzési szolgáltatások",
+    "gle": "Spáinn, an-Murcia: Computer training services",
+    "ell": "Ισπανία-Μούρθια: Υπηρεσίες εκπαίδευσης στον τομέα της πληροφορικής",
+    "spa": "España-Murcia: Servicios de formación informática",
+    "est": "Hispaania-Murcia: Arvutikoolitusteenused",
+    "nld": "Spanje-Murcia: Opleidingscursussen voor computergebruik",
+    "fin": "Espanja-Murcia: ATK-koulutus",
+    "pol": "Hiszpania-Murcja: Usługi szkolenia komputerowego",
+    "hrv": "Španjolska-Murcia: Usluge izobrazbe za rad s računalom",
+    "ces": "Španělsko-Murcia: Počítačová školení",
+    "dan": "Spanien-Murcia: Edb-uddannelse",
+    "ron": "Spania-Murcia: Servicii de formare în informatică",
+    "por": "Espanha-Múrcia: Serviços de formação em matéria de informática",
+    "slk": "Španielsko-Murcia: Školenia na prácu s počítačmi",
+    "mlt": "Spanja-Murcia: Servizzi tat-taħriġ tal-kompjuter",
+    "fra": "Espagne-Murcie: Services de formation informatique",
+    "deu": "Spanien-Murcia: Ausbildung im Umgang mit Computern",
+    "lit": "Ispanija-Mursija: Mokymo dirbti kompiuteriu paslaugos",
+    "ita": "Spagna-Murcia: Servizi di formazione informatica",
+    "bul": "Иcпaния-Мурсия: Услуги по компютърно обучение",
+    "slv": "Španija-Murcia: Storitve računalniškega usposabljanja",
+    "eng": "Spain-Murcia: Computer training services"
+   }
+  },
+  {
+   "notice-identifier": "63ba83af-5373-490f-87d8-f43d559902c0",
+   "deadline-receipt-request": [
+    "2024-10-25T12:00:00+02:00"
+   ],
+   "notice-type": "cn-standard",
+   "publication-number": "580823-2024",
+   "dispatch-date": "2024-09-25+02:00",
+   "estimated-value-cur-proc": "EUR",
+   "buyer-country": [
+    "ESP"
+   ],
+   "total-value": 915000,
+   "description-lot": {
+    "spa": [
+     "Servicio de oficina de concienciación en ciberseguridad"
+    ]
+   },
+   "procedure-type": "open",
+   "classification-cpv": [
+    "80533100",
+    "80533100"
+   ],
+   "contract-nature": [
+    "services",
+    "services"
+   ],
+   "buyer-name": {
+    "spa": [
+     "LANTIK - LANTIK"
+    ]
+   },
+   "publication-date": "2024-09-26+02:00",
+   "estimated-value-proc": "915000",
+   "links": {
+    "xml": {
+     "MUL": "https://ted.europa.eu/en/notice/580823-2024/xml"
+    },
+    "pdf": {
+     "BUL": "https://ted.europa.eu/bg/notice/580823-2024/pdf",
+     "SPA": "https://ted.europa.eu/es/notice/580823-2024/pdf",
+     "CES": "https://ted.europa.eu/cs/notice/580823-2024/pdf",
+     "DAN": "https://ted.europa.eu/da/notice/580823-2024/pdf",
+     "DEU": "https://ted.europa.eu/de/notice/580823-2024/pdf",
+     "EST": "https://ted.europa.eu/et/notice/580823-2024/pdf",
+     "ELL": "https://ted.europa.eu/el/notice/580823-2024/pdf",
+     "ENG": "https://ted.europa.eu/en/notice/580823-2024/pdf",
+     "FRA": "https://ted.europa.eu/fr/notice/580823-2024/pdf",
+     "GLE": "https://ted.europa.eu/ga/notice/580823-2024/pdf",
+     "HRV": "https://ted.europa.eu/hr/notice/580823-2024/pdf",
+     "ITA": "https://ted.europa.eu/it/notice/580823-2024/pdf",
+     "LAV": "https://ted.europa.eu/lv/notice/580823-2024/pdf",
+     "LIT": "https://ted.europa.eu/lt/notice/580823-2024/pdf",
+     "HUN": "https://ted.europa.eu/hu/notice/580823-2024/pdf",
+     "MLT": "https://ted.europa.eu/mt/notice/580823-2024/pdf",
+     "NLD": "https://ted.europa.eu/nl/notice/580823-2024/pdf",
+     "POL": "https://ted.europa.eu/pl/notice/580823-2024/pdf",
+     "POR": "https://ted.europa.eu/pt/notice/580823-2024/pdf",
+     "RON": "https://ted.europa.eu/ro/notice/580823-2024/pdf",
+     "SLK": "https://ted.europa.eu/sk/notice/580823-2024/pdf",
+     "SLV": "https://ted.europa.eu/sl/notice/580823-2024/pdf",
+     "FIN": "https://ted.europa.eu/fi/notice/580823-2024/pdf",
+     "SWE": "https://ted.europa.eu/sv/notice/580823-2024/pdf"
+    },
+    "pdfs": {
+     "SPA": "https://ted.europa.eu/es/notice/580823-2024/pdfs"
+    },
+    "html": {
+     "BUL": "https://ted.europa.eu/bg/notice/-/detail/580823-2024",
+     "SPA": "https://ted.europa.eu/es/notice/-/detail/580823-2024",
+     "CES": "https://ted.europa.eu/cs/notice/-/detail/580823-2024",
+     "DAN": "https://ted.europa.eu/da/notice/-/detail/580823-2024",
+     "DEU": "https://ted.europa.eu/de/notice/-/detail/580823-2024",
+     "EST": "https://ted.europa.eu/et/notice/-/detail/580823-2024",
+     "ELL": "https://ted.europa.eu/el/notice/-/detail/580823-2024",
+     "ENG": "https://ted.europa.eu/en/notice/-/detail/580823-2024",
+     "FRA": "https://ted.europa.eu/fr/notice/-/detail/580823-2024",
+     "GLE": "https://ted.europa.eu/ga/notice/-/detail/580823-2024",
+     "HRV": "https://ted.europa.eu/hr/notice/-/detail/580823-2024",
+     "ITA": "https://ted.europa.eu/it/notice/-/detail/580823-2024",
+     "LAV": "https://ted.europa.eu/lv/notice/-/detail/580823-2024",
+     "LIT": "https://ted.europa.eu/lt/notice/-/detail/580823-2024",
+     "HUN": "https://ted.europa.eu/hu/notice/-/detail/580823-2024",
+     "MLT": "https://ted.europa.eu/mt/notice/-/detail/580823-2024",
+     "NLD": "https://ted.europa.eu/nl/notice/-/detail/580823-2024",
+     "POL": "https://ted.europa.eu/pl/notice/-/detail/580823-2024",
+     "POR": "https://ted.europa.eu/pt/notice/-/detail/580823-2024",
+     "RON": "https://ted.europa.eu/ro/notice/-/detail/580823-2024",
+     "SLK": "https://ted.europa.eu/sk/notice/-/detail/580823-2024",
+     "SLV": "https://ted.europa.eu/sl/notice/-/detail/580823-2024",
+     "FIN": "https://ted.europa.eu/fi/notice/-/detail/580823-2024",
+     "SWE": "https://ted.europa.eu/sv/notice/-/detail/580823-2024"
+    },
+    "htmlDirect": {
+     "BUL": "https://ted.europa.eu/bg/notice/580823-2024/html",
+     "SPA": "https://ted.europa.eu/es/notice/580823-2024/html",
+     "CES": "https://ted.europa.eu/cs/notice/580823-2024/html",
+     "DAN": "https://ted.europa.eu/da/notice/580823-2024/html",
+     "DEU": "https://ted.europa.eu/de/notice/580823-2024/html",
+     "EST": "https://ted.europa.eu/et/notice/580823-2024/html",
+     "ELL": "https://ted.europa.eu/el/notice/580823-2024/html",
+     "ENG": "https://ted.europa.eu/en/notice/580823-2024/html",
+     "FRA": "https://ted.europa.eu/fr/notice/580823-2024/html",
+     "GLE": "https://ted.europa.eu/ga/notice/580823-2024/html",
+     "HRV": "https://ted.europa.eu/hr/notice/580823-2024/html",
+     "ITA": "https://ted.europa.eu/it/notice/580823-2024/html",
+     "LAV": "https://ted.europa.eu/lv/notice/580823-2024/html",
+     "LIT": "https://ted.europa.eu/lt/notice/580823-2024/html",
+     "HUN": "https://ted.europa.eu/hu/notice/580823-2024/html",
+     "MLT": "https://ted.europa.eu/mt/notice/580823-2024/html",
+     "NLD": "https://ted.europa.eu/nl/notice/580823-2024/html",
+     "POL": "https://ted.europa.eu/pl/notice/580823-2024/html",
+     "POR": "https://ted.europa.eu/pt/notice/580823-2024/html",
+     "RON": "https://ted.europa.eu/ro/notice/580823-2024/html",
+     "SLK": "https://ted.europa.eu/sk/notice/580823-2024/html",
+     "SLV": "https://ted.europa.eu/sl/notice/580823-2024/html",
+     "FIN": "https://ted.europa.eu/fi/notice/580823-2024/html",
+     "SWE": "https://ted.europa.eu/sv/notice/580823-2024/html"
+    }
+   },
+   "notice-title": {
+    "hun": "Spanyolország – Számítógépes képzési szolgáltatások – Servicio de oficina de concienciación en ciberseguridad",
+    "lav": "Spānija – Datormācības pakalpojumi – Servicio de oficina de concienciación en ciberseguridad",
+    "swe": "Spanien – Datautbildning – Servicio de oficina de concienciación en ciberseguridad",
+    "gle": "An Spáinn – Computer training services – Servicio de oficina de concienciación en ciberseguridad",
+    "ell": "Ισπανία – Υπηρεσίες εκπαίδευσης στον τομέα της πληροφορικής – Servicio de oficina de concienciación en ciberseguridad",
+    "spa": "España – Servicios de formación informática – Servicio de oficina de concienciación en ciberseguridad",
+    "est": "Hispaania – Arvutikoolitusteenused – Servicio de oficina de concienciación en ciberseguridad",
+    "nld": "Spanje – Opleidingscursussen voor computergebruik – Servicio de oficina de concienciación en ciberseguridad",
+    "fin": "Espanja – ATK-koulutus – Servicio de oficina de concienciación en ciberseguridad",
+    "pol": "Hiszpania – Usługi szkolenia komputerowego – Servicio de oficina de concienciación en ciberseguridad",
+    "hrv": "Španjolska – Usluge izobrazbe za rad s računalom – Servicio de oficina de concienciación en ciberseguridad",
+    "ces": "Španělsko – Počítačová školení – Servicio de oficina de concienciación en ciberseguridad",
+    "dan": "Spanien – Edb-uddannelse – Servicio de oficina de concienciación en ciberseguridad",
+    "ron": "Spania – Servicii de formare în informatică – Servicio de oficina de concienciación en ciberseguridad",
+    "por": "Espanha – Serviços de formação em matéria de informática – Servicio de oficina de concienciación en ciberseguridad",
+    "slk": "Španielsko – Školenia na prácu s počítačmi – Servicio de oficina de concienciación en ciberseguridad",
+    "fra": "Espagne – Services de formation informatique – Servicio de oficina de concienciación en ciberseguridad",
+    "mlt": "Spanja – Servizzi tat-taħriġ tal-kompjuter – Servicio de oficina de concienciación en ciberseguridad",
+    "deu": "Spanien – Ausbildung im Umgang mit Computern – Servicio de oficina de concienciación en ciberseguridad",
+    "lit": "Ispanija – Mokymo dirbti kompiuteriu paslaugos – Servicio de oficina de concienciación en ciberseguridad",
+    "ita": "Spagna – Servizi di formazione informatica – Servicio de oficina de concienciación en ciberseguridad",
+    "bul": "Иcпaния – Услуги по компютърно обучение – Servicio de oficina de concienciación en ciberseguridad",
+    "slv": "Španija – Storitve računalniškega usposabljanja – Servicio de oficina de concienciación en ciberseguridad",
+    "eng": "Spain – Computer training services – Servicio de oficina de concienciación en ciberseguridad"
+   },
+   "description-proc": {
+    "spa": "Servicio de oficina de concienciación en ciberseguridad"
+   }
+  }
+ ],
+ "totalNoticeCount": 2,
+ "iterationNextToken": null,
+ "timedOut": false
+}
