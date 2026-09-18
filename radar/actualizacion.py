@@ -57,8 +57,9 @@ REEMPLAZABLES = (
     "radar.py",
     "start.command",
     "README.md",
-    # El almacén de certificados sí se actualiza: caduca, y si se queda atrás PLACSP
-    # deja de validar. `config/suchprofile.json`, en cambio, no se toca jamás.
+    # El almacén de certificados sí se actualiza: caduca, y si se queda atrás el
+    # Bekanntmachungsservice deja de validar. `config/suchprofile.json`, en cambio, no se
+    # toca jamás.
     "config/certs",
     # El fuente del envoltorio de macOS y su binario prefabricado. Lo que NO se sustituye
     # es «Ausschreibungsradar.app»: un bundle no se puede cambiar por debajo de sí
