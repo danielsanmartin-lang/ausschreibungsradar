@@ -242,11 +242,17 @@ def comprimir_para_release(version: str) -> Path:
     enlaces simbólicos y los metadatos del bundle. Un `.app` comprimido con `zip -r` a
     secas puede llegar al otro lado sin poder abrirse.
 
-    Y se imprime el SHA-256, que aquí **sí** sirve de algo. El README explica por qué no
-    servía antes: el zip que compara el actualizador lo genera GitHub al vuelo desde el
-    tag y su suma puede cambiar sin que cambie el código. Este fichero lo subes tú, así
-    que su hash es estable y ponerlo en las notas de la release es una comprobación de
-    verdad y no una trampa.
+    Se imprime también el SHA-256 del fichero, que este sí es estable: lo subes tú.
+
+    ⚠️ Pero NO lo pongas en las notas de la release. `actualizacion._sha_publicado()`
+    barre el cuerpo de la release buscando cualquier palabra de 64 dígitos hexadecimales,
+    y lo que compara contra ella no es este adjunto: es el `zipball_url`, el zip del
+    código fuente que GitHub genera al vuelo desde el tag y cuya suma puede cambiar sin
+    que cambie una línea. Un hash en las notas deja a todo el que actualiza desde el
+    código con un «no coincide con el SHA-256 publicado» y sin actualización.
+
+    El sitio del hash es un adjunto aparte, `<nombre>.zip.sha256`: se publica igual, se
+    puede comprobar igual, y no lo lee el actualizador.
     """
     destino = RAIZ / f"Ausschreibungsradar {version}.zip"
     destino.unlink(missing_ok=True)
